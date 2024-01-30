@@ -1,4 +1,5 @@
 "use client";
+import { getImageProps } from "next/image";
 import { useEffect, useState } from "react";
 import {
   footerWrapperClass,
@@ -12,20 +13,57 @@ import {
   wrapperClass,
 } from "./style.css";
 
-export const carouselImages = [
-  "carousel-text/1.jpg",
-  "carousel-text/2.jpg",
-  "carousel-text/3.jpg",
-  "carousel-text/4.jpg",
-  "carousel-text/5.jpg",
-];
-
 const email = "info@cntextual.com";
 const phones = ["+393319075460", "+393663193937"];
 const instagram = "itsfilippinifra";
 
+const commonImageProps = {
+  width: 800,
+  height: 400,
+  priority: true,
+};
+
 export const HomeView = () => {
   const [bgImageIndex, setBgImageIndex] = useState<number>(0);
+
+  const {
+    props: { src: image1 },
+  } = getImageProps({
+    ...commonImageProps,
+    priority: true,
+    src: "/carousel-text/1.jpg",
+    alt: "carousel-1",
+  });
+  const {
+    props: { src: image2 },
+  } = getImageProps({
+    ...commonImageProps,
+    src: "/carousel-text/2.jpg",
+    alt: "carousel-2",
+  });
+  const {
+    props: { src: image3 },
+  } = getImageProps({
+    ...commonImageProps,
+    src: "/carousel-text/3.jpg",
+    alt: "carousel-3",
+  });
+  const {
+    props: { src: image4 },
+  } = getImageProps({
+    ...commonImageProps,
+    src: "/carousel-text/4.jpg",
+    alt: "carousel-4",
+  });
+  const {
+    props: { src: image5 },
+  } = getImageProps({
+    ...commonImageProps,
+    src: "/carousel-text/5.jpg",
+    alt: "carousel-5",
+  });
+
+  const carouselImages = [image1, image2, image3, image4, image5];
 
   useEffect(() => {
     const interval = setInterval(() => {
