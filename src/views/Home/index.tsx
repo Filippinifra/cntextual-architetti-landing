@@ -88,6 +88,7 @@ export const HomeView = () => {
                 visibility: bgImageIndex === i ? "visible" : "hidden",
                 position: "absolute",
               }}
+              key={`${img}-${i}`}
             >
               <h1
                 className={typographyWithBgClass}
