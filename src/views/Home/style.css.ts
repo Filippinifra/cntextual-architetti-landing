@@ -76,7 +76,7 @@ export const subtitleClass = style({
 export const mediumTextClass = style({
   fontSize: 26,
   fontWeight: 600,
-  color: "darkgrey",
+  color: "#1A1A1A",
 
   "@media": {
     "screen and (max-width: 1000px)": {
@@ -112,7 +112,7 @@ export const internalFooterWrapperClass = style({
 
 export const textClass = style({
   fontSize: 16,
-  color: "darkgrey",
+  color: "#1A1A1A",
 
   "@media": {
     "screen and (max-width: 1000px)": {
