@@ -10,6 +10,8 @@ import {
   subtitleClass,
   textClass,
   titleClass,
+  typographyWithBgClass,
+  typographyWithBgWrapperClass,
   wrapperClass,
 } from "./style.css";
 
@@ -70,7 +72,7 @@ export const HomeView = () => {
       const newIndex =
         bgImageIndex === carouselImages.length - 1 ? 0 : bgImageIndex + 1;
       setBgImageIndex(newIndex);
-    }, 1000);
+    }, 200);
 
     return () => clearInterval(interval);
   }, [setBgImageIndex, bgImageIndex]);
@@ -79,20 +81,30 @@ export const HomeView = () => {
     <main className={wrapperClass}>
       <div className={internalWrapperClass}>
         <div style={{ height: 60 }} />
-        <div>
-          <h1
-            className={titleClass}
-            style={{
-              backgroundImage: `url(
-        '${carouselImages[bgImageIndex]}')`,
-            }}
-          >
-            cntextual
-            <h2 className={subtitleClass}>architetti</h2>
-          </h1>
-          <div>
-            <p className={mediumTextClass}>coming soon</p>
-          </div>
+        <div className={typographyWithBgWrapperClass}>
+          {carouselImages.map((img, i) => (
+            <div
+              style={{
+                visibility: bgImageIndex === i ? "visible" : "hidden",
+                position: "absolute",
+              }}
+            >
+              <h1
+                className={typographyWithBgClass}
+                style={{
+                  backgroundImage: `url(
+        '${img}')`,
+                }}
+              >
+                <span className={titleClass}>cntextual</span>
+                <span className={subtitleClass}>{"\narchitetti"}</span>
+              </h1>
+              <div style={{ height: 120 }} />
+              <div>
+                <p className={mediumTextClass}>coming soon</p>
+              </div>
+            </div>
+          ))}
         </div>
         <div className={footerWrapperClass}>
           <div className={internalFooterWrapperClass}>

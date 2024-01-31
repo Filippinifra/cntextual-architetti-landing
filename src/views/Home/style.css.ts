@@ -17,7 +17,14 @@ export const internalWrapperClass = style({
   boxSizing: "border-box",
 });
 
-export const titleClass = style({
+export const typographyWithBgWrapperClass = style({
+  width: "100%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+});
+
+export const typographyWithBgClass = style({
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
   backgroundPosition: "center",
@@ -26,7 +33,10 @@ export const titleClass = style({
   color: "transparent",
 
   textAlign: "right",
+  whiteSpace: "pre-line",
+});
 
+export const titleClass = style({
   fontWeight: 600,
   fontSize: 180,
   lineHeight: "100px",
@@ -49,34 +59,34 @@ export const titleClass = style({
 
 export const subtitleClass = style({
   fontWeight: 500,
-  fontSize: 40,
+  fontSize: 28,
   "@media": {
     "screen and (max-width: 1000px)": {
-      fontSize: 32,
+      fontSize: 24,
     },
     "screen and (max-width: 660px)": {
-      fontSize: 28,
+      fontSize: 20,
     },
     "screen and (max-width: 400px)": {
-      fontSize: 24,
+      fontSize: 18,
     },
   },
 });
 
 export const mediumTextClass = style({
-  fontSize: 20,
+  fontSize: 26,
   fontWeight: 600,
   color: "darkgrey",
 
   "@media": {
     "screen and (max-width: 1000px)": {
-      fontSize: 18,
+      fontSize: 20,
     },
     "screen and (max-width: 660px)": {
-      fontSize: 16,
+      fontSize: 18,
     },
     "screen and (max-width: 400px)": {
-      fontSize: 14,
+      fontSize: 16,
     },
   },
 });
