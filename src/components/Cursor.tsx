@@ -28,7 +28,9 @@ export const Cursor = () => {
 
   const cursorStyle = isPointer ? { left: "-100px", top: "-100px" } : {};
 
-  document.documentElement.style.cursor = "none";
+  useEffect(() => {
+    document.documentElement.style.cursor = "none";
+  }, []);
 
   return (
     <div
