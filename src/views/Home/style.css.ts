@@ -39,20 +39,16 @@ export const typographyWithBgClass = style({
 export const titleClass = style({
   fontWeight: 600,
   fontSize: 180,
-  lineHeight: "100px",
 
   "@media": {
     "screen and (max-width: 1000px)": {
       fontSize: 120,
-      lineHeight: "80px",
     },
     "screen and (max-width: 660px)": {
       fontSize: 80,
-      lineHeight: "60px",
     },
     "screen and (max-width: 400px)": {
       fontSize: 70,
-      lineHeight: "60px",
     },
   },
 });

@@ -1,4 +1,5 @@
 "use client";
+import localFont from "next/font/local";
 import { getImageProps } from "next/image";
 import { useEffect, useState } from "react";
 import {
@@ -14,6 +15,16 @@ import {
   typographyWithBgWrapperClass,
   wrapperClass,
 } from "./style.css";
+
+const fontMedium = localFont({
+  src: "../../font/helv-medium.ttf",
+});
+const fontRegita = localFont({
+  src: "../../font/helv-regita.ttf",
+});
+const fontRegular = localFont({
+  src: "../../font/helv-regular.ttf",
+});
 
 const email = "info@cntextual.com";
 const phones = ["+393319075460", "+393663193937"];
@@ -78,7 +89,7 @@ export const HomeView = () => {
   }, [setBgImageIndex, bgImageIndex]);
 
   return (
-    <main className={wrapperClass}>
+    <main className={`${wrapperClass} ${fontMedium.className}`}>
       <div className={internalWrapperClass}>
         <div style={{ height: 60 }} />
         <div className={typographyWithBgWrapperClass}>
