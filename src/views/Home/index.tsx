@@ -37,7 +37,7 @@ const phones = [
   { phone: "+393319075460", name: "Christian Spolti" },
   { phone: "+393663193937", name: "Nicolò Mariani" },
 ];
-const instagram = "itsfilippinifra";
+const instagram = "cntextual";
 
 export const HomeView = () => {
   const [bgImageIndex, setBgImageIndex] = useState<number>(0);
@@ -58,7 +58,7 @@ export const HomeView = () => {
         <a
           className={`${linksClass} ${fontRegular.className}`}
           target="_blank"
-          href={instagram}
+          href={`https://www.instagram.com/${instagram}/`}
           style={{ textDecoration: "none" }}
         >
           instagram
@@ -135,13 +135,13 @@ export const HomeView = () => {
               <div className={internalFooterItemWapperClass}>
                 <a
                   className={`${footerTextClass} ${fontRegita.className} ${removeOnTableClass}`}
-                  href={`tel:${phones[1]}`}
+                  href={`tel:${phones[1].phone}`}
                 >
                   {phones[1].name}
                 </a>
                 <a
                   className={`${footerTextClass} ${fontRegita.className}`}
-                  href={`tel:${phones[1]}`}
+                  href={`tel:${phones[1].phone}`}
                 >
                   {phones[1].phone}
                 </a>
