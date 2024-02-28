@@ -39,6 +39,13 @@ export default function RootLayout({
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffffff" />
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="theme-color" content="#ffffff" />
+        <meta property="og:title" content={metadata.title as string} />
+        <meta property="og:url" content="https://www.cntextual.it" />
+        <meta
+          property="og:description"
+          content={metadata.description as string}
+        />
+        <meta property="og:image" content="/android-chrome-256x256" />
       </Head>
       <html lang="it">
         <body className={inter.className}>{children}</body>
