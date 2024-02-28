@@ -121,13 +121,13 @@ export const HomeView = () => {
               <div className={internalFooterItemWapperClass}>
                 <a
                   className={`${footerTextClass} ${fontRegita.className} ${removeOnTableClass}`}
-                  href={`tel:${phones[0]}`}
+                  href={`tel:${phones[0].phone}`}
                 >
                   {phones[0].name}
                 </a>
                 <a
                   className={`${footerTextClass} ${fontRegita.className}`}
-                  href={`tel:${phones[0]}`}
+                  href={`tel:${phones[0].phone}`}
                 >
                   {phones[0].phone}
                 </a>
