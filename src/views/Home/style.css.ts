@@ -1,82 +1,128 @@
 import { style } from "@vanilla-extract/css";
 
-export const wrapperClass = style({
-  width: "100%",
-});
+const imagesSizes = {
+  big: {
+    width: { desktop: 896, notebook: 624, tablet: 350, phone: 320 },
+    rationHeight: 5,
+  },
+  little: {
+    width: { desktop: 100, notebook: 71, tablet: 50, phone: 50 },
+    rationHeight: 3.5,
+  },
+};
 
-export const internalWrapperClass = style({
+export const wrapper = style({
   position: "relative",
   height: "100vh",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "space-between",
+  display: "grid",
+  gridAutoFlow: "column",
   margin: "auto",
-  padding: 40,
   boxSizing: "border-box",
 
-  maxWidth: 896,
+  padding: 40,
+  gridTemplateRows: "1fr 208px 100px 74px 1fr 34px",
+  maxWidth: imagesSizes.big.width.desktop + 80,
   "@media": {
     "screen and (max-width: 1000px)": {
-      maxWidth: 624,
+      padding: 30,
+      gridTemplateRows: "1fr 145px 100px 74px 1fr 34px",
+      maxWidth: imagesSizes.big.width.notebook + 60,
     },
     "screen and (max-width: 660px)": {
-      maxWidth: 443,
+      padding: 30,
+      gridTemplateRows: "1fr 102px 100px 74px 1fr 101px",
+      maxWidth: imagesSizes.big.width.tablet + 60,
     },
     "screen and (max-width: 400px)": {
-      maxWidth: 443,
+      padding: 30,
+      gridTemplateRows: "1fr 102px 100px 74px 1fr 109px",
+      maxWidth: imagesSizes.big.width.phone + 60,
     },
   },
 });
 
-export const typographyWithBgWrapperClass = style({
-  width: "100%",
+export const externalImagesWrapperClass = style({
+  height:
+    imagesSizes.big.width.desktop / imagesSizes.big.rationHeight +
+    imagesSizes.little.width.desktop / imagesSizes.little.rationHeight,
+  width: imagesSizes.big.width.desktop,
+  "@media": {
+    "screen and (max-width: 1000px)": {
+      height:
+        imagesSizes.big.width.notebook / imagesSizes.big.rationHeight +
+        imagesSizes.little.width.notebook / imagesSizes.little.rationHeight,
+      width: imagesSizes.big.width.notebook,
+    },
+    "screen and (max-width: 660px)": {
+      height:
+        imagesSizes.big.width.tablet / imagesSizes.big.rationHeight +
+        imagesSizes.little.width.tablet / imagesSizes.little.rationHeight,
+      width: imagesSizes.big.width.tablet,
+    },
+    "screen and (max-width: 400px)": {
+      height:
+        imagesSizes.big.width.phone / imagesSizes.big.rationHeight +
+        imagesSizes.little.width.phone / imagesSizes.little.rationHeight,
+      width: imagesSizes.big.width.phone,
+    },
+  },
+});
+
+export const imagesWrapperClass = style({
+  position: "absolute",
   display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
+  flexDirection: "column",
+  justifyContent: "flex-end",
+  alignItems: "flex-end",
 });
 
-export const typographyWithBgClass = style({
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  display: "inline-block",
-  backgroundClip: "text",
-  color: "transparent",
-
-  textAlign: "right",
-  whiteSpace: "pre-line",
-});
-
-export const titleClass = style({
-  fontWeight: 600,
-  fontSize: 180,
-
+export const bigImageClass = style({
+  height: imagesSizes.big.width.desktop / imagesSizes.big.rationHeight,
+  width: imagesSizes.big.width.desktop,
   "@media": {
     "screen and (max-width: 1000px)": {
-      fontSize: 120,
+      height: imagesSizes.big.width.notebook / imagesSizes.big.rationHeight,
+      width: imagesSizes.big.width.notebook,
     },
     "screen and (max-width: 660px)": {
-      fontSize: 80,
+      height: imagesSizes.big.width.tablet / imagesSizes.big.rationHeight,
+      width: imagesSizes.big.width.tablet,
     },
     "screen and (max-width: 400px)": {
-      fontSize: 70,
+      height: imagesSizes.big.width.phone / imagesSizes.big.rationHeight,
+      width: imagesSizes.big.width.phone,
     },
   },
 });
 
-export const subtitleClass = style({
-  fontWeight: 500,
-  fontSize: 28,
+export const littleImageClass = style({
+  height: imagesSizes.little.width.desktop / imagesSizes.little.rationHeight,
+  width: imagesSizes.little.width.desktop,
+  marginRight: 10,
   "@media": {
     "screen and (max-width: 1000px)": {
-      fontSize: 24,
+      height:
+        imagesSizes.little.width.notebook / imagesSizes.little.rationHeight,
+      width: imagesSizes.little.width.notebook,
+      marginRight: 8,
     },
     "screen and (max-width: 660px)": {
-      fontSize: 20,
+      height: imagesSizes.little.width.tablet / imagesSizes.little.rationHeight,
+      width: imagesSizes.little.width.tablet,
+      marginRight: 6,
     },
     "screen and (max-width: 400px)": {
-      fontSize: 18,
+      height: imagesSizes.little.width.phone / imagesSizes.little.rationHeight,
+      width: imagesSizes.little.width.phone,
+    },
+  },
+});
+
+export const comingSoonWrapperclass = style({
+  width: 195,
+  "@media": {
+    "screen and (max-width: 660px)": {
+      width: 145,
     },
   },
 });
@@ -96,6 +142,59 @@ export const comingSoonClass = style({
       fontSize: 24,
     },
   },
+});
+
+export const bachecaAndInstagramTopWrapperClass = style({
+  display: "flex",
+  justifyContent: "space-between",
+});
+
+export const bachecaAndInstagramBottomWrapperClass = style({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "flex-end",
+  gap: 4,
+});
+
+export const footerWrapperClass = style({
+  width: "100%",
+  display: "flex",
+});
+
+export const internalFooterWrapperClass = style({
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr 1fr",
+  justifyContent: "space-between",
+  width: "100%",
+  gap: 8,
+
+  "@media": {
+    "screen and (max-width: 660px)": {
+      display: "flex",
+      gap: 12,
+      flexDirection: "column",
+      justifyContent: "flex-end",
+      alignItems: "flex-end",
+    },
+  },
+});
+
+export const phoneNumberWrapperClass = style({
+  display: "flex",
+  gap: 10,
+
+  "@media": {
+    "screen and (max-width: 660px)": {
+      display: "block",
+    },
+  },
+});
+
+export const internalFooterItemWapperClass = style({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
 });
 
 export const linksClass = style({
@@ -128,49 +227,21 @@ export const footerTextClass = style({
     "screen and (max-width: 1000px)": {
       fontSize: 12,
     },
-    "screen and (max-width: 660px)": {
-      fontSize: 8,
-    },
   },
 });
 
-export const footerWrapperClass = style({
-  width: "100%",
-});
-
-export const internalFooterWrapperClass = style({
-  display: "grid",
-  gridTemplateColumns: "1fr 1fr 1fr",
-  justifyContent: "space-between",
-  width: "100%",
-  gap: 8,
-
+export const removeOnTableClass = style({
   "@media": {
     "screen and (max-width: 660px)": {
-      flexDirection: "column",
-      justifyContent: "flex-end",
-      alignItems: "flex-end",
+      display: "none",
     },
   },
 });
 
-export const phoneNumberWrapperClass = style({
-  display: "flex",
-  gap: 10,
-});
-
-export const comingSoonWrapperclass = style({
-  width: 195,
+export const addOnTableClass = style({
   "@media": {
-    "screen and (max-width: 660px)": {
-      width: 145,
+    "screen and (min-width: 661px)": {
+      display: "none",
     },
   },
-});
-
-export const internalFooterItemWapperClass = style({
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
 });
