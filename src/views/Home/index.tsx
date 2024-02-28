@@ -1,22 +1,25 @@
 "use client";
 import localFont from "next/font/local";
-import { getImageProps } from "next/image";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import {
+  addOnTableClass,
+  bachecaAndInstagramBottomWrapperClass,
+  bachecaAndInstagramTopWrapperClass,
+  bigImageClass,
   comingSoonClass,
   comingSoonWrapperclass,
+  externalImagesWrapperClass,
   footerTextClass,
   footerWrapperClass,
+  imagesWrapperClass,
   internalFooterItemWapperClass,
   internalFooterWrapperClass,
-  internalWrapperClass,
   linksClass,
+  littleImageClass,
   phoneNumberWrapperClass,
-  subtitleClass,
-  titleClass,
-  typographyWithBgClass,
-  typographyWithBgWrapperClass,
-  wrapperClass,
+  removeOnTableClass,
+  wrapper,
 } from "./style.css";
 
 const fontMedium = localFont({
@@ -36,116 +39,88 @@ const phones = [
 ];
 const instagram = "itsfilippinifra";
 
-const commonImageProps = {
-  width: 800,
-  height: 400,
-  priority: true,
-};
-
 export const HomeView = () => {
   const [bgImageIndex, setBgImageIndex] = useState<number>(0);
 
-  const {
-    props: { src: image1 },
-  } = getImageProps({
-    ...commonImageProps,
-    priority: true,
-    src: "/carousel-text/1.jpg",
-    alt: "carousel-1",
-  });
-  const {
-    props: { src: image2 },
-  } = getImageProps({
-    ...commonImageProps,
-    src: "/carousel-text/2.jpg",
-    alt: "carousel-2",
-  });
-  const {
-    props: { src: image3 },
-  } = getImageProps({
-    ...commonImageProps,
-    src: "/carousel-text/3.jpg",
-    alt: "carousel-3",
-  });
-  const {
-    props: { src: image4 },
-  } = getImageProps({
-    ...commonImageProps,
-    src: "/carousel-text/4.jpg",
-    alt: "carousel-4",
-  });
-  const {
-    props: { src: image5 },
-  } = getImageProps({
-    ...commonImageProps,
-    src: "/carousel-text/5.jpg",
-    alt: "carousel-5",
-  });
-
-  const carouselImages = [image1, image2, image3, image4, image5];
-
   useEffect(() => {
     const interval = setInterval(() => {
-      const newIndex =
-        bgImageIndex === carouselImages.length - 1 ? 0 : bgImageIndex + 1;
+      const newIndex = bgImageIndex === 9 - 1 ? 0 : bgImageIndex + 1;
       setBgImageIndex(newIndex);
     }, 200);
 
     return () => clearInterval(interval);
   }, [setBgImageIndex, bgImageIndex]);
 
+  const BachecaAndInstagram = () => {
+    return (
+      <>
+        <a className={`${linksClass} ${fontRegular.className}`}>bacheca</a>
+        <a
+          className={`${linksClass} ${fontRegular.className}`}
+          target="_blank"
+          href={instagram}
+          style={{ textDecoration: "none" }}
+        >
+          instagram
+        </a>
+      </>
+    );
+  };
+
   return (
-    <main className={wrapperClass}>
-      <div className={internalWrapperClass}>
-        <div style={{ height: 60 }} />
-        <div className={typographyWithBgWrapperClass}>
-          {carouselImages.map((img, i) => (
+    <main style={{ width: "100%" }}>
+      <div className={wrapper}>
+        {/* first spacer */}
+        <div />
+        <div className={externalImagesWrapperClass}>
+          {[...Array(9)].map((e, i) => (
             <div
-              style={{
-                visibility: bgImageIndex === i ? "visible" : "hidden",
-                position: "absolute",
-              }}
-              key={`${img}-${i}`}
+              key={`wrapper-images-${i}`}
+              style={{ visibility: i === bgImageIndex ? "visible" : "hidden" }}
+              className={imagesWrapperClass}
             >
-              <h1
-                className={typographyWithBgClass}
-                style={{
-                  backgroundImage: `url('${img}')`,
-                }}
-              >
-                <span className={titleClass}>cntextual</span>
-                <span className={subtitleClass}>{"\narchitetti"}</span>
-              </h1>
-              <div style={{ height: 120 }} />
-              <div className={comingSoonWrapperclass}>
-                <p className={`${comingSoonClass} ${fontMedium.className}`}>
-                  coming soon
-                </p>
-                <div
-                  style={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  <a className={`${linksClass} ${fontRegular.className}`}>
-                    bacheca
-                  </a>
-                  <a
-                    className={`${linksClass} ${fontRegular.className}`}
-                    target="_blank"
-                    href={instagram}
-                    style={{ textDecoration: "none" }}
-                  >
-                    instagram
-                  </a>
-                </div>
-              </div>
+              <Image
+                alt={`subtitle-image-${i}`}
+                src={`/carousel-text/C${i + 1}.png`}
+                width={896}
+                height={179}
+                className={bigImageClass}
+              />
+              <Image
+                alt={`title-image-${i}`}
+                src={`/carousel-text/A${i + 1}.png`}
+                width={100}
+                height={29}
+                className={littleImageClass}
+              />
             </div>
           ))}
         </div>
+        {/* second spacer */}
+        <div />
+        <div className={comingSoonWrapperclass}>
+          <p className={`${comingSoonClass} ${fontMedium.className}`}>
+            coming soon
+          </p>
+          <div
+            className={`${removeOnTableClass} ${bachecaAndInstagramTopWrapperClass}`}
+          >
+            <BachecaAndInstagram />
+          </div>
+        </div>
+        {/* third spacer */}
+        <div />
         <div className={footerWrapperClass}>
+          <div
+            className={`${addOnTableClass} ${bachecaAndInstagramBottomWrapperClass}`}
+          >
+            <BachecaAndInstagram />
+          </div>
           <div className={internalFooterWrapperClass}>
             <div className={phoneNumberWrapperClass}>
               <div className={internalFooterItemWapperClass}>
                 <a
-                  className={`${footerTextClass} ${fontRegita.className}`}
+                  className={`${footerTextClass} ${fontRegita.className} ${removeOnTableClass}`}
                   href={`tel:${phones[0]}`}
                 >
                   {phones[0].name}
@@ -159,7 +134,7 @@ export const HomeView = () => {
               </div>
               <div className={internalFooterItemWapperClass}>
                 <a
-                  className={`${footerTextClass} ${fontRegita.className}`}
+                  className={`${footerTextClass} ${fontRegita.className} ${removeOnTableClass}`}
                   href={`tel:${phones[1]}`}
                 >
                   {phones[1].name}
@@ -174,7 +149,7 @@ export const HomeView = () => {
             </div>
             <div className={internalFooterItemWapperClass}>
               <a
-                className={`${footerTextClass} ${fontRegita.className}`}
+                className={`${footerTextClass} ${fontRegita.className} ${removeOnTableClass}`}
                 href={`mailto:${email}`}
               >
                 {"contact us"}
