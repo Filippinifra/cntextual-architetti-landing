@@ -6,7 +6,6 @@ export const wrapperClass = style({
 
 export const internalWrapperClass = style({
   position: "relative",
-  maxWidth: 800,
   height: "100vh",
   display: "flex",
   flexDirection: "column",
@@ -15,6 +14,19 @@ export const internalWrapperClass = style({
   margin: "auto",
   padding: 40,
   boxSizing: "border-box",
+
+  maxWidth: 896,
+  "@media": {
+    "screen and (max-width: 1000px)": {
+      maxWidth: 624,
+    },
+    "screen and (max-width: 660px)": {
+      maxWidth: 443,
+    },
+    "screen and (max-width: 400px)": {
+      maxWidth: 443,
+    },
+  },
 });
 
 export const typographyWithBgWrapperClass = style({
@@ -69,20 +81,55 @@ export const subtitleClass = style({
   },
 });
 
-export const mediumTextClass = style({
-  fontSize: 26,
-  fontWeight: 600,
-  color: "#1A1A1A",
+export const comingSoonClass = style({
+  fontSize: 32,
+  color: "#919597",
 
   "@media": {
     "screen and (max-width: 1000px)": {
-      fontSize: 20,
+      fontSize: 32,
     },
     "screen and (max-width: 660px)": {
-      fontSize: 18,
+      fontSize: 24,
     },
     "screen and (max-width: 400px)": {
-      fontSize: 16,
+      fontSize: 24,
+    },
+  },
+});
+
+export const linksClass = style({
+  fontSize: 18,
+  color: "#a3a7a8",
+  cursor: "none",
+
+  "@media": {
+    "screen and (max-width: 1000px)": {
+      fontSize: 18,
+    },
+    "screen and (max-width: 660px)": {
+      fontSize: 12,
+    },
+    "screen and (max-width: 400px)": {
+      fontSize: 12,
+    },
+  },
+});
+
+export const footerTextClass = style({
+  fontSize: 12,
+  color: "#b5b8ba",
+  whiteSpace: "break-spaces",
+  textAlign: "right",
+  cursor: "none",
+  textDecoration: "none",
+
+  "@media": {
+    "screen and (max-width: 1000px)": {
+      fontSize: 12,
+    },
+    "screen and (max-width: 660px)": {
+      fontSize: 8,
     },
   },
 });
@@ -92,7 +139,8 @@ export const footerWrapperClass = style({
 });
 
 export const internalFooterWrapperClass = style({
-  display: "flex",
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr 1fr",
   justifyContent: "space-between",
   width: "100%",
   gap: 8,
@@ -106,21 +154,23 @@ export const internalFooterWrapperClass = style({
   },
 });
 
-export const textClass = style({
-  fontSize: 16,
-  color: "#1A1A1A",
+export const phoneNumberWrapperClass = style({
+  display: "flex",
+  gap: 10,
+});
 
+export const comingSoonWrapperclass = style({
+  width: 195,
   "@media": {
-    "screen and (max-width: 1000px)": {
-      fontSize: 14,
-    },
     "screen and (max-width: 660px)": {
-      fontSize: 12,
+      width: 145,
     },
   },
 });
 
-export const phoneNumberWrapperClass = style({
+export const internalFooterItemWapperClass = style({
   display: "flex",
   flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
 });

@@ -12,9 +12,11 @@ export const Cursor = () => {
 
     const target = e.target;
 
-    setIsPointer(
-      window.getComputedStyle(target).getPropertyValue("cursor") === "pointer"
-    );
+    if (e.toElement.nodeName === "A") {
+      setIsPointer(true);
+    } else {
+      setIsPointer(false);
+    }
   };
 
   useEffect(() => {
@@ -24,10 +26,6 @@ export const Cursor = () => {
     };
   }, []);
 
-  const flareSize = isPointer ? 0 : 60;
-
-  const cursorStyle = isPointer ? { left: "-100px", top: "-100px" } : {};
-
   useEffect(() => {
     document.documentElement.style.cursor = "none";
   }, []);
@@ -36,11 +34,10 @@ export const Cursor = () => {
     <div
       className={`${cursorClass} ${isPointer ? pointerClass : ""}`}
       style={{
-        ...cursorStyle,
         left: `${position.x}px`,
         top: `${position.y}px`,
-        width: `${flareSize}px`,
-        height: `${flareSize}px`,
+        width: 60,
+        height: 60,
       }}
     >
       +

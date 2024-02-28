@@ -3,13 +3,16 @@ import localFont from "next/font/local";
 import { getImageProps } from "next/image";
 import { useEffect, useState } from "react";
 import {
+  comingSoonClass,
+  comingSoonWrapperclass,
+  footerTextClass,
   footerWrapperClass,
+  internalFooterItemWapperClass,
   internalFooterWrapperClass,
   internalWrapperClass,
-  mediumTextClass,
+  linksClass,
   phoneNumberWrapperClass,
   subtitleClass,
-  textClass,
   titleClass,
   typographyWithBgClass,
   typographyWithBgWrapperClass,
@@ -27,7 +30,10 @@ const fontRegular = localFont({
 });
 
 const email = "info@cntextual.com";
-const phones = ["+393319075460", "+393663193937"];
+const phones = [
+  { phone: "+393319075460", name: "Christian Spolti" },
+  { phone: "+393663193937", name: "Nicolò Mariani" },
+];
 const instagram = "itsfilippinifra";
 
 const commonImageProps = {
@@ -89,7 +95,7 @@ export const HomeView = () => {
   }, [setBgImageIndex, bgImageIndex]);
 
   return (
-    <main className={`${wrapperClass} ${fontMedium.className}`}>
+    <main className={wrapperClass}>
       <div className={internalWrapperClass}>
         <div style={{ height: 60 }} />
         <div className={typographyWithBgWrapperClass}>
@@ -104,16 +110,32 @@ export const HomeView = () => {
               <h1
                 className={typographyWithBgClass}
                 style={{
-                  backgroundImage: `url(
-        '${img}')`,
+                  backgroundImage: `url('${img}')`,
                 }}
               >
                 <span className={titleClass}>cntextual</span>
                 <span className={subtitleClass}>{"\narchitetti"}</span>
               </h1>
               <div style={{ height: 120 }} />
-              <div>
-                <p className={mediumTextClass}>coming soon</p>
+              <div className={comingSoonWrapperclass}>
+                <p className={`${comingSoonClass} ${fontMedium.className}`}>
+                  coming soon
+                </p>
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <a className={`${linksClass} ${fontRegular.className}`}>
+                    bacheca
+                  </a>
+                  <a
+                    className={`${linksClass} ${fontRegular.className}`}
+                    target="_blank"
+                    href={instagram}
+                    style={{ textDecoration: "none" }}
+                  >
+                    instagram
+                  </a>
+                </div>
               </div>
             </div>
           ))}
@@ -121,23 +143,52 @@ export const HomeView = () => {
         <div className={footerWrapperClass}>
           <div className={internalFooterWrapperClass}>
             <div className={phoneNumberWrapperClass}>
-              <a className={textClass} href={`tel:${phones[0]}`}>
-                {phones[0]}
+              <div className={internalFooterItemWapperClass}>
+                <a
+                  className={`${footerTextClass} ${fontRegita.className}`}
+                  href={`tel:${phones[0]}`}
+                >
+                  {phones[0].name}
+                </a>
+                <a
+                  className={`${footerTextClass} ${fontRegita.className}`}
+                  href={`tel:${phones[0]}`}
+                >
+                  {phones[0].phone}
+                </a>
+              </div>
+              <div className={internalFooterItemWapperClass}>
+                <a
+                  className={`${footerTextClass} ${fontRegita.className}`}
+                  href={`tel:${phones[1]}`}
+                >
+                  {phones[1].name}
+                </a>
+                <a
+                  className={`${footerTextClass} ${fontRegita.className}`}
+                  href={`tel:${phones[1]}`}
+                >
+                  {phones[1].phone}
+                </a>
+              </div>
+            </div>
+            <div className={internalFooterItemWapperClass}>
+              <a
+                className={`${footerTextClass} ${fontRegita.className}`}
+                href={`mailto:${email}`}
+              >
+                {"contact us"}
               </a>
-              <a className={textClass} href={`tel:${phones[1]}`}>
-                {phones[1]}
+              <a
+                className={`${footerTextClass} ${fontRegita.className}`}
+                href={`mailto:${email}`}
+              >
+                {email}
               </a>
             </div>
-            <a className={textClass} href={`mailto:${email}`}>
-              {email}
-            </a>
-            <a
-              className={textClass}
-              href={`http://instagram.com/_u/${instagram}/`}
-              target="_blank"
-            >
-              {"instagram"}
-            </a>
+            <p className={`${footerTextClass} ${fontRegita.className}`}>
+              {"Sovico,\nMonza e Brianza, Italy"}
+            </p>
           </div>
         </div>
       </div>
