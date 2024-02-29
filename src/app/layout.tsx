@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     siteName: "cntextual",
     images: [
       {
-        url: "/android-chrome-256x256",
+        url: "https://www.cntextual.it/android-chrome-256x256",
       },
     ],
   },
