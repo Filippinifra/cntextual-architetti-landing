@@ -3,11 +3,11 @@ import { style } from "@vanilla-extract/css";
 const imagesSizes = {
   big: {
     width: { desktop: 896, notebook: 624, tablet: 350, phone: 320 },
-    rationHeight: 5,
+    rationHeight: 5.75,
   },
   little: {
     width: { desktop: 100, notebook: 71, tablet: 50, phone: 50 },
-    rationHeight: 3.5,
+    rationHeight: 5.56,
   },
 };
 
@@ -98,18 +98,18 @@ export const bigImageClass = style({
 export const littleImageClass = style({
   height: imagesSizes.little.width.desktop / imagesSizes.little.rationHeight,
   width: imagesSizes.little.width.desktop,
-  marginRight: 10,
+  marginTop: 10,
   "@media": {
     "screen and (max-width: 1000px)": {
       height:
         imagesSizes.little.width.notebook / imagesSizes.little.rationHeight,
       width: imagesSizes.little.width.notebook,
-      marginRight: 8,
+      marginTop: 8,
     },
     "screen and (max-width: 660px)": {
       height: imagesSizes.little.width.tablet / imagesSizes.little.rationHeight,
       width: imagesSizes.little.width.tablet,
-      marginRight: 6,
+      marginTop: 6,
     },
     "screen and (max-width: 400px)": {
       height: imagesSizes.little.width.phone / imagesSizes.little.rationHeight,
@@ -119,12 +119,7 @@ export const littleImageClass = style({
 });
 
 export const comingSoonWrapperclass = style({
-  width: 195,
-  "@media": {
-    "screen and (max-width: 660px)": {
-      width: 145,
-    },
-  },
+  width: 193,
 });
 
 export const comingSoonClass = style({
@@ -153,7 +148,7 @@ export const bachecaAndInstagramBottomWrapperClass = style({
   display: "flex",
   flexDirection: "column",
   justifyContent: "flex-end",
-  gap: 4,
+  gap: 8,
 });
 
 export const footerWrapperClass = style({
@@ -198,13 +193,13 @@ export const internalFooterItemWapperClass = style({
 });
 
 export const linksClass = style({
-  fontSize: 18,
+  fontSize: 16,
   color: "#a3a7a8",
   cursor: "none",
 
   "@media": {
     "screen and (max-width: 1000px)": {
-      fontSize: 18,
+      fontSize: 16,
     },
     "screen and (max-width: 660px)": {
       fontSize: 12,

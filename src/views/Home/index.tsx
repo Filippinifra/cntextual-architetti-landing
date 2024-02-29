@@ -122,28 +122,18 @@ export const HomeView = () => {
                 <a
                   className={`${footerTextClass} ${fontRegita.className} ${removeOnTableClass}`}
                   href={`tel:${phones[0].phone}`}
+                  style={{ textAlign: "left" }}
                 >
-                  {phones[0].name}
-                </a>
-                <a
-                  className={`${footerTextClass} ${fontRegita.className}`}
-                  href={`tel:${phones[0].phone}`}
-                >
-                  {phones[0].phone}
+                  {`${phones[0].name}\n${phones[0].phone}`}
                 </a>
               </div>
               <div className={internalFooterItemWapperClass}>
                 <a
                   className={`${footerTextClass} ${fontRegita.className} ${removeOnTableClass}`}
                   href={`tel:${phones[1].phone}`}
+                  style={{ textAlign: "left" }}
                 >
-                  {phones[1].name}
-                </a>
-                <a
-                  className={`${footerTextClass} ${fontRegita.className}`}
-                  href={`tel:${phones[1].phone}`}
-                >
-                  {phones[1].phone}
+                  {`${phones[1].name}\n${phones[1].phone}`}
                 </a>
               </div>
             </div>
