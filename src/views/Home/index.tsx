@@ -32,7 +32,7 @@ const fontRegular = localFont({
   src: "../../font/helv-regular.ttf",
 });
 
-const email = "info@cntextual.com";
+const email = "info@cntextual.it";
 const phones = [
   { phone: "+393319075460", name: "Christian Spolti" },
   { phone: "+393663193937", name: "Nicolò Mariani" },
