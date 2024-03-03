@@ -142,6 +142,8 @@ export const comingSoonClass = style({
 export const bachecaAndInstagramTopWrapperClass = style({
   display: "flex",
   justifyContent: "space-between",
+  paddingLeft: 1,
+  paddingRight: 2,
 });
 
 export const bachecaAndInstagramBottomWrapperClass = style({
