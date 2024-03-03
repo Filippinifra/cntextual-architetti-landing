@@ -13,6 +13,7 @@ export const cursorClass = style({
   alignItems: "center",
   justifyContent: "center",
   color: "#3a3b3c",
+  backdropFilter: "blur(1px)",
 
   "@media": {
     "screen and (max-width: 768px)": {
