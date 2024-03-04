@@ -68,7 +68,7 @@ export const HomeView = () => {
   };
 
   return (
-    <main style={{ width: "100%" }}>
+    <main style={{ width: "100%", height: "100%" }}>
       <div className={wrapper}>
         {/* first spacer */}
         <div />

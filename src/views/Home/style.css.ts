@@ -13,7 +13,7 @@ const imagesSizes = {
 
 export const wrapper = style({
   position: "relative",
-  height: "100vh",
+  height: "100%",
   display: "grid",
   gridAutoFlow: "column",
   margin: "auto",
