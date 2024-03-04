@@ -17,6 +17,7 @@ export const cursorClass = style({
 
   "@media": {
     "screen and (max-width: 768px)": {
+      backdropFilter: "none",
       width: 0,
       height: 0,
       transition:
