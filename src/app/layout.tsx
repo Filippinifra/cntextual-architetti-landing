@@ -52,8 +52,10 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <html lang="it">
-        <body className={inter.className}>{children}</body>
+      <html lang="it" style={{ height: "100%" }}>
+        <body className={inter.className} style={{ height: "100%" }}>
+          {children}
+        </body>
       </html>
     </>
   );
