@@ -6,7 +6,7 @@ const imagesSizes = {
     rationHeight: 5.75,
   },
   little: {
-    width: { desktop: 100, notebook: 71, tablet: 50, phone: 50 },
+    width: { desktop: 136, notebook: 105, tablet: 80, phone: 80 },
     rationHeight: 5.56,
   },
 };
@@ -119,16 +119,22 @@ export const littleImageClass = style({
 });
 
 export const comingSoonWrapperclass = style({
-  width: 193,
+  width: 223,
+
+  "@media": {
+    "screen and (max-width: 1000px)": {
+      width: 157,
+    },
+  },
 });
 
 export const comingSoonClass = style({
-  fontSize: 32,
+  fontSize: 37,
   color: "#919597",
 
   "@media": {
     "screen and (max-width: 1000px)": {
-      fontSize: 32,
+      fontSize: 26,
     },
     "screen and (max-width: 660px)": {
       fontSize: 24,
@@ -195,13 +201,13 @@ export const internalFooterItemWapperClass = style({
 });
 
 export const linksClass = style({
-  fontSize: 16,
+  fontSize: 18,
   color: "#a3a7a8",
   cursor: "none",
 
   "@media": {
     "screen and (max-width: 1000px)": {
-      fontSize: 16,
+      fontSize: 15,
     },
     "screen and (max-width: 660px)": {
       fontSize: 12,
@@ -213,7 +219,7 @@ export const linksClass = style({
 });
 
 export const footerTextClass = style({
-  fontSize: 12,
+  fontSize: 13,
   color: "#b5b8ba",
   whiteSpace: "break-spaces",
   textAlign: "right",
@@ -222,6 +228,12 @@ export const footerTextClass = style({
 
   "@media": {
     "screen and (max-width: 1000px)": {
+      fontSize: 10,
+    },
+    "screen and (max-width: 660px)": {
+      fontSize: 12,
+    },
+    "screen and (max-width: 400px)": {
       fontSize: 12,
     },
   },
