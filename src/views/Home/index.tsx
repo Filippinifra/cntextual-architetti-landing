@@ -34,8 +34,8 @@ const fontRegular = localFont({
 
 const email = "info@cntextual.it";
 const phones = [
-  { phone: "+393319075460", name: "Christian Spolti" },
-  { phone: "+393663193937", name: "Nicolò Mariani" },
+  { phone: "+39 3319075460", name: "Christian Spolti" },
+  { phone: "+39 3663193937", name: "Nicolò Mariani" },
 ];
 const instagram = "cntextual";
 
