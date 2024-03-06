@@ -42,8 +42,11 @@ const instagram = "cntextual";
 const BachecaAndInstagram = () => {
   return (
     <>
-      <a className={`${linksClass} ${fontRegular.className}`}>bacheca</a>
+      <a id="bacheca" className={`${linksClass} ${fontRegular.className}`}>
+        bacheca
+      </a>
       <a
+        id="instagram"
         className={`${linksClass} ${fontRegular.className}`}
         target="_blank"
         href={`https://www.instagram.com/${instagram}/`}
@@ -126,6 +129,7 @@ export const HomeView = () => {
                   className={`${footerTextClass} ${fontRegita.className} ${removeOnTableClass}`}
                   href={`tel:${phones[0].phone}`}
                   style={{ textAlign: "left" }}
+                  id="first-telephone-name"
                 >
                   {phones[0].name}
                 </a>
@@ -133,6 +137,7 @@ export const HomeView = () => {
                   className={`${footerTextClass} ${fontRegita.className}`}
                   href={`tel:${phones[0].phone}`}
                   style={{ textAlign: "left" }}
+                  id="first-telephone-phone"
                 >
                   {phones[0].phone}
                 </a>
@@ -145,6 +150,7 @@ export const HomeView = () => {
                   className={`${footerTextClass} ${fontRegita.className} ${removeOnTableClass}`}
                   href={`tel:${phones[1].phone}`}
                   style={{ textAlign: "left" }}
+                  id="second-telephone-name"
                 >
                   {phones[1].name}
                 </a>
@@ -152,6 +158,7 @@ export const HomeView = () => {
                   className={`${footerTextClass} ${fontRegita.className}`}
                   href={`tel:${phones[1].phone}`}
                   style={{ textAlign: "left" }}
+                  id="second-telephone-phone"
                 >
                   {phones[1].phone}
                 </a>
@@ -161,12 +168,14 @@ export const HomeView = () => {
               <a
                 className={`${footerTextClass} ${fontRegita.className} ${removeOnTableClass}`}
                 href={`mailto:${email}`}
+                id="email-label"
               >
                 {"contact us"}
               </a>
               <a
                 className={`${footerTextClass} ${fontRegita.className}`}
                 href={`mailto:${email}`}
+                id="email-contact"
               >
                 {email}
               </a>
