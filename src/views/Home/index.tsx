@@ -39,6 +39,22 @@ const phones = [
 ];
 const instagram = "cntextual";
 
+const BachecaAndInstagram = () => {
+  return (
+    <>
+      <a className={`${linksClass} ${fontRegular.className}`}>bacheca</a>
+      <a
+        className={`${linksClass} ${fontRegular.className}`}
+        target="_blank"
+        href={`https://www.instagram.com/${instagram}/`}
+        style={{ textDecoration: "none" }}
+      >
+        instagram
+      </a>
+    </>
+  );
+};
+
 export const HomeView = () => {
   const [bgImageIndex, setBgImageIndex] = useState<number>(0);
 
@@ -50,22 +66,6 @@ export const HomeView = () => {
 
     return () => clearInterval(interval);
   }, [setBgImageIndex, bgImageIndex]);
-
-  const BachecaAndInstagram = () => {
-    return (
-      <>
-        <a className={`${linksClass} ${fontRegular.className}`}>bacheca</a>
-        <a
-          className={`${linksClass} ${fontRegular.className}`}
-          target="_blank"
-          href={`https://www.instagram.com/${instagram}/`}
-          style={{ textDecoration: "none" }}
-        >
-          instagram
-        </a>
-      </>
-    );
-  };
 
   return (
     <main style={{ width: "100%", height: "100%" }}>
