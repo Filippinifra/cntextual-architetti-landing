@@ -79,7 +79,7 @@ export const HomeView = () => {
           {[...Array(9)].map((e, i) => (
             <div
               key={`wrapper-images-${i}`}
-              style={{ visibility: i === bgImageIndex ? "visible" : "hidden" }}
+              style={{ zIndex: i === bgImageIndex ? 100 : 50 }}
               className={imagesWrapperClass}
             >
               <Image
