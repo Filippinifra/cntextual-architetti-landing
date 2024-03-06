@@ -1,7 +1,7 @@
 "use client";
 import localFont from "next/font/local";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   addOnTableClass,
   bachecaAndInstagramBottomWrapperClass,
@@ -61,14 +61,14 @@ const BachecaAndInstagram = () => {
 export const HomeView = () => {
   const [bgImageIndex, setBgImageIndex] = useState<number>(0);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     const newIndex = bgImageIndex === 9 - 1 ? 0 : bgImageIndex + 1;
-  //     setBgImageIndex(newIndex);
-  //   }, 200);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const newIndex = bgImageIndex === 9 - 1 ? 0 : bgImageIndex + 1;
+      setBgImageIndex(newIndex);
+    }, 300);
 
-  //   return () => clearInterval(interval);
-  // }, [setBgImageIndex, bgImageIndex]);
+    return () => clearInterval(interval);
+  }, [setBgImageIndex, bgImageIndex]);
 
   return (
     <main style={{ width: "100%", height: "100%" }}>
