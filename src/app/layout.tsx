@@ -7,16 +7,16 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "cntextual",
-  description: "Quello che fa per voi e i vostri progetti",
+  description: "cntextual architetti",
   openGraph: {
     type: "website",
     url: "https://www.cntextual.it",
     title: "cntextual",
-    description: "Quello che fa per voi e i vostri progetti",
+    description: "cntextual architetti",
     siteName: "cntextual",
     images: [
       {
-        url: "https://www.cntextual.it/android-chrome-256x256.png",
+        url: "https://www.cntextual.it/og-photo.png",
       },
     ],
   },
