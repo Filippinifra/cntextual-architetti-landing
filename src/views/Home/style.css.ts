@@ -74,6 +74,7 @@ export const imagesWrapperClass = style({
   flexDirection: "column",
   justifyContent: "flex-end",
   alignItems: "flex-end",
+  backgroundColor: "white",
 });
 
 export const bigImageClass = style({
