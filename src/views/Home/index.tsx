@@ -42,7 +42,12 @@ const instagram = "cntextual";
 const BachecaAndInstagram = () => {
   return (
     <>
-      <a id="bacheca" className={`${linksClass} ${fontRegular.className}`}>
+      <a
+        id="bacheca"
+        className={`${linksClass} ${fontRegular.className}`}
+        href="/BACHECA.pdf"
+        target="_blank"
+      >
         bacheca
       </a>
       <a
