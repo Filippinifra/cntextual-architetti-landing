@@ -47,6 +47,7 @@ const BachecaAndInstagram = () => {
         className={`${linksClass} ${fontRegular.className}`}
         href="/BACHECA.pdf"
         target="_blank"
+        style={{ textDecoration: "none" }}
       >
         bacheca
       </a>
