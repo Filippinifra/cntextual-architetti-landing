@@ -1,5 +1,6 @@
 "use client";
 import { CarouselModal } from "@/components/CarouselModal/CarouselModal";
+import { DownloadPortfolioRow } from "@/components/DownloadPortfolioRow/DownloadPortfolioRow";
 import { InstagramIcon } from "@/components/InstagramIcon/InstagramIcon";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -42,17 +43,6 @@ const phones = [
   { phone: "+39 3663193937", name: "Nicolò Mariani" },
 ];
 const instagram = "cntextual";
-
-const DownloadPortfolio = () => (
-  <a
-    className={downloadPortfolioClass}
-    id="download-portfolio"
-    href={PORTFOLIO_PDF_HREF}
-    download="BACHECA.pdf"
-  >
-    Download Portfolio
-  </a>
-);
 
 const LOGO_SRC = "/cntextual-logo-bianco.png";
 
@@ -125,7 +115,13 @@ export const HomeView = () => {
       <div className={wrapper}>
         <div className={comingSoonWrapperclass}>
           <div className={portfolioDownloadTopWrapperClass}>
-            <DownloadPortfolio />
+            <DownloadPortfolioRow
+              href={PORTFOLIO_PDF_HREF}
+              download="BACHECA.pdf"
+              linkClassName={downloadPortfolioClass}
+              id="download-portfolio"
+              label="Download Portfolio"
+            />
           </div>
         </div>
         <div className={footerWrapperClass}>
