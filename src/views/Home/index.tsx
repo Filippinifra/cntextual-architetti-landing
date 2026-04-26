@@ -6,6 +6,8 @@ import {
   bachecaAndInstagramBottomWrapperClass,
   bachecaAndInstagramTopWrapperClass,
   carouselImageClass,
+  carouselLogoOverlayClass,
+  carouselOverlayLogoImageClass,
   comingSoonWrapperclass,
   externalImagesWrapperClass,
   footerTextClass,
@@ -52,6 +54,8 @@ const BachecaAndInstagram = () => {
   );
 };
 
+const LOGO_SRC = "/cntextual-logo-bianco.png";
+
 const CAROUSEL_SLIDES = [...Array(19)].map(
   (_, i) => `/carousel/${String(i + 1).padStart(2, "0")}.jpg`
 );
@@ -88,6 +92,17 @@ export const HomeView = () => {
             />
           </div>
         ))}
+        <div className={carouselLogoOverlayClass} aria-hidden>
+          <Image
+            src={LOGO_SRC}
+            alt=""
+            width={1200}
+            height={240}
+            sizes="(max-width: 1000px) 45vw, 450px"
+            className={carouselOverlayLogoImageClass}
+            priority
+          />
+        </div>
       </div>
       <div className={wrapper}>
         <div className={comingSoonWrapperclass}>

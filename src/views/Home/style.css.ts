@@ -61,6 +61,28 @@ export const carouselImageClass = style({
   objectPosition: "center",
 });
 
+export const carouselLogoOverlayClass = style({
+  position: "absolute",
+  inset: 0,
+  zIndex: 200,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  pointerEvents: "none",
+  padding: 16,
+  boxSizing: "border-box",
+});
+
+export const carouselOverlayLogoImageClass = style({
+  display: "block",
+  width: "50%",
+  height: "auto",
+  flexShrink: 0,
+  objectFit: "contain",
+  objectPosition: "center",
+  filter: "drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4)) drop-shadow(0 6px 24px rgba(0, 0, 0, 0.28))",
+});
+
 export const comingSoonWrapperclass = style({
   width: "100%",
   display: "flex",
