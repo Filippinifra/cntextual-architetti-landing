@@ -131,6 +131,7 @@ export const comingSoonWrapperclass = style({
 
 export const comingSoonClass = style({
   fontSize: 37,
+  fontWeight: 500,
   color: "#919597",
 
   "@media": {
@@ -221,6 +222,7 @@ export const linksClass = style({
 
 export const footerTextClass = style({
   fontSize: 13,
+  fontStyle: "italic",
   color: "#b5b8ba",
   whiteSpace: "break-spaces",
   textAlign: "right",

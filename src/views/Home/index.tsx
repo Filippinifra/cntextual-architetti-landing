@@ -1,5 +1,4 @@
 "use client";
-import localFont from "next/font/local";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import {
@@ -22,16 +21,6 @@ import {
   wrapper,
 } from "./style.css";
 
-const fontMedium = localFont({
-  src: "../../font/helv-medium.ttf",
-});
-const fontRegita = localFont({
-  src: "../../font/helv-regita.ttf",
-});
-const fontRegular = localFont({
-  src: "../../font/helv-regular.ttf",
-});
-
 const email = "info@cntextual.it";
 const phones = [
   { phone: "+39 3319075460", name: "Christian Spolti" },
@@ -44,7 +33,7 @@ const BachecaAndInstagram = () => {
     <>
       <a
         id="bacheca"
-        className={`${linksClass} ${fontRegular.className}`}
+        className={linksClass}
         href="/BACHECA.pdf"
         target="_blank"
         style={{ textDecoration: "none" }}
@@ -53,7 +42,7 @@ const BachecaAndInstagram = () => {
       </a>
       <a
         id="instagram"
-        className={`${linksClass} ${fontRegular.className}`}
+        className={linksClass}
         target="_blank"
         href={`https://www.instagram.com/${instagram}/`}
         style={{ textDecoration: "none" }}
@@ -108,7 +97,7 @@ export const HomeView = () => {
         {/* second spacer */}
         <div />
         <div className={comingSoonWrapperclass}>
-          <p className={`${comingSoonClass} ${fontMedium.className}`}>
+          <p className={comingSoonClass}>
             coming soon
           </p>
           <div
@@ -132,7 +121,7 @@ export const HomeView = () => {
                 style={{ alignItems: "flex-start" }}
               >
                 <a
-                  className={`${footerTextClass} ${fontRegita.className} ${removeOnTableClass}`}
+                  className={`${footerTextClass} ${removeOnTableClass}`}
                   href={`tel:${phones[0].phone}`}
                   style={{ textAlign: "left" }}
                   id="first-telephone-name"
@@ -140,7 +129,7 @@ export const HomeView = () => {
                   {phones[0].name}
                 </a>
                 <a
-                  className={`${footerTextClass} ${fontRegita.className}`}
+                  className={footerTextClass}
                   href={`tel:${phones[0].phone}`}
                   style={{ textAlign: "left" }}
                   id="first-telephone-phone"
@@ -153,7 +142,7 @@ export const HomeView = () => {
                 style={{ alignItems: "flex-start" }}
               >
                 <a
-                  className={`${footerTextClass} ${fontRegita.className} ${removeOnTableClass}`}
+                  className={`${footerTextClass} ${removeOnTableClass}`}
                   href={`tel:${phones[1].phone}`}
                   style={{ textAlign: "left" }}
                   id="second-telephone-name"
@@ -161,7 +150,7 @@ export const HomeView = () => {
                   {phones[1].name}
                 </a>
                 <a
-                  className={`${footerTextClass} ${fontRegita.className}`}
+                  className={footerTextClass}
                   href={`tel:${phones[1].phone}`}
                   style={{ textAlign: "left" }}
                   id="second-telephone-phone"
@@ -172,21 +161,21 @@ export const HomeView = () => {
             </div>
             <div className={internalFooterItemWapperClass}>
               <a
-                className={`${footerTextClass} ${fontRegita.className} ${removeOnTableClass}`}
+                className={`${footerTextClass} ${removeOnTableClass}`}
                 href={`mailto:${email}`}
                 id="email-label"
               >
                 {"contact us"}
               </a>
               <a
-                className={`${footerTextClass} ${fontRegita.className}`}
+                className={footerTextClass}
                 href={`mailto:${email}`}
                 id="email-contact"
               >
                 {email}
               </a>
             </div>
-            <p className={`${footerTextClass} ${fontRegita.className}`}>
+            <p className={footerTextClass}>
               {"Sovico,\nMonza e Brianza, Italy"}
             </p>
           </div>

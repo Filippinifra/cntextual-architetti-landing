@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import Head from "next/head";
+import { helveticaNowText } from "@/fonts/helveticaNowText";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "cntextual",
@@ -53,7 +51,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff" />
       </Head>
       <html lang="it" style={{ height: "100%" }}>
-        <body className={inter.className} style={{ height: "100%" }}>
+        <body className={helveticaNowText.className} style={{ height: "100%" }}>
           {children}
         </body>
       </html>
