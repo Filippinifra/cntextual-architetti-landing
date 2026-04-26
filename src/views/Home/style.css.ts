@@ -222,7 +222,10 @@ export const downloadPortfolioClass = style({
   alignItems: "center",
   justifyContent: "center",
   boxSizing: "border-box",
-  padding: 0,
+  paddingTop: 64,
+  paddingBottom: 64,
+  paddingLeft: 0,
+  paddingRight: 0,
   fontSize: 18,
   fontWeight: 400,
   color: "#313237",
@@ -233,14 +236,15 @@ export const downloadPortfolioClass = style({
   textAlign: "center",
 
   "@media": {
-    "screen and (max-width: 1000px)": {
+    "screen and (max-width: 660px)": {
+      paddingTop: 20,
+      paddingBottom: 20,
       fontSize: 15,
     },
-    "screen and (max-width: 660px)": {
-      fontSize: 12,
-    },
     "screen and (max-width: 400px)": {
-      fontSize: 12,
+      paddingTop: 12,
+      paddingBottom: 12,
+      fontSize: 14,
     },
   },
 });
@@ -285,6 +289,13 @@ export const footerContactBlockClass = style({
   borderBottom: "1px solid #838488",
   paddingBottom: 2,
   marginBottom: 0,
+
+  "@media": {
+    "screen and (max-width: 660px)": {
+      borderBottom: "none",
+      paddingBottom: 0,
+    },
+  },
 });
 
 export const footerContactBlockRowClass = style({
