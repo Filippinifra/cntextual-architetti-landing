@@ -5,8 +5,7 @@ import {
   addOnTableClass,
   bachecaAndInstagramBottomWrapperClass,
   bachecaAndInstagramTopWrapperClass,
-  bigImageClass,
-  comingSoonClass,
+  carouselImageClass,
   comingSoonWrapperclass,
   externalImagesWrapperClass,
   footerTextClass,
@@ -15,7 +14,6 @@ import {
   internalFooterItemWapperClass,
   internalFooterWrapperClass,
   linksClass,
-  littleImageClass,
   phoneNumberWrapperClass,
   removeOnTableClass,
   wrapper,
@@ -53,17 +51,22 @@ const BachecaAndInstagram = () => {
   );
 };
 
+const CAROUSEL_SLIDES = [...Array(19)].map(
+  (_, i) => `/carousel/${String(i + 1).padStart(2, "0")}.jpg`
+);
+
 export const HomeView = () => {
   const [bgImageIndex, setBgImageIndex] = useState<number>(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const newIndex = bgImageIndex === 9 - 1 ? 0 : bgImageIndex + 1;
-      setBgImageIndex(newIndex);
+      setBgImageIndex((prev) =>
+        prev === CAROUSEL_SLIDES.length - 1 ? 0 : prev + 1
+      );
     }, 300);
 
     return () => clearInterval(interval);
-  }, [setBgImageIndex, bgImageIndex]);
+  }, []);
 
   return (
     <main style={{ width: "100%", height: "100%" }}>
@@ -71,25 +74,19 @@ export const HomeView = () => {
         {/* first spacer */}
         <div />
         <div className={externalImagesWrapperClass}>
-          {[...Array(9)].map((e, i) => (
+          {CAROUSEL_SLIDES.map((src, i) => (
             <div
-              key={`wrapper-images-${i}`}
+              key={src}
               style={{ zIndex: i === bgImageIndex ? 100 : 50 }}
               className={imagesWrapperClass}
             >
               <Image
-                alt={`subtitle-image-${i}`}
-                src={`/carousel-text/C${i + 1}.png`}
-                width={896}
-                height={179}
-                className={bigImageClass}
-              />
-              <Image
-                alt={`title-image-${i}`}
-                src={`/carousel-text/A${i + 1}.png`}
-                width={100}
-                height={29}
-                className={littleImageClass}
+                alt=""
+                src={src}
+                fill
+                priority={i === 0}
+                sizes="(max-width: 400px) 100vw, (max-width: 660px) 410px, (max-width: 1000px) 654px, 976px"
+                className={carouselImageClass}
               />
             </div>
           ))}
@@ -97,9 +94,6 @@ export const HomeView = () => {
         {/* second spacer */}
         <div />
         <div className={comingSoonWrapperclass}>
-          <p className={comingSoonClass}>
-            coming soon
-          </p>
           <div
             className={`${removeOnTableClass} ${bachecaAndInstagramTopWrapperClass}`}
           >

@@ -1,15 +1,6 @@
 import { style } from "@vanilla-extract/css";
 
-const imagesSizes = {
-  big: {
-    width: { desktop: 896, notebook: 624, tablet: 350, phone: 320 },
-    rationHeight: 5.75,
-  },
-  little: {
-    width: { desktop: 136, notebook: 105, tablet: 80, phone: 80 },
-    rationHeight: 5.56,
-  },
-};
+const maxContentWidth = 896 + 80;
 
 export const wrapper = style({
   position: "relative",
@@ -19,132 +10,66 @@ export const wrapper = style({
   margin: "auto",
   boxSizing: "border-box",
 
-  padding: 40,
-  gridTemplateRows: "1fr 208px 100px 74px 1fr 34px",
-  maxWidth: imagesSizes.big.width.desktop + 80,
+  paddingTop: 96,
+  paddingBottom: 96,
+  paddingLeft: 40,
+  paddingRight: 40,
+  gridTemplateRows: "1fr 75vh 100px 74px 1fr 34px",
+  maxWidth: maxContentWidth,
   "@media": {
     "screen and (max-width: 1000px)": {
-      padding: 30,
-      gridTemplateRows: "1fr 145px 100px 74px 1fr 34px",
-      maxWidth: imagesSizes.big.width.notebook + 60,
+      paddingTop: 96,
+      paddingBottom: 96,
+      paddingLeft: 30,
+      paddingRight: 30,
+      maxWidth: 624 + 60,
     },
     "screen and (max-width: 660px)": {
-      padding: 30,
-      gridTemplateRows: "1fr 102px 100px 74px 1fr 101px",
-      maxWidth: imagesSizes.big.width.tablet + 60,
+      paddingTop: 96,
+      paddingBottom: 96,
+      paddingLeft: 30,
+      paddingRight: 30,
+      gridTemplateRows: "1fr 75vh 100px 74px 1fr 101px",
+      maxWidth: 350 + 60,
     },
     "screen and (max-width: 400px)": {
-      padding: 30,
-      gridTemplateRows: "1fr 102px 100px 74px 1fr 109px",
-      maxWidth: imagesSizes.big.width.phone + 60,
+      paddingTop: 96,
+      paddingBottom: 96,
+      paddingLeft: 30,
+      paddingRight: 30,
+      gridTemplateRows: "1fr 75vh 100px 74px 1fr 109px",
+      maxWidth: 320 + 60,
     },
   },
 });
 
 export const externalImagesWrapperClass = style({
-  height:
-    imagesSizes.big.width.desktop / imagesSizes.big.rationHeight +
-    imagesSizes.little.width.desktop / imagesSizes.little.rationHeight,
-  width: imagesSizes.big.width.desktop,
-  "@media": {
-    "screen and (max-width: 1000px)": {
-      height:
-        imagesSizes.big.width.notebook / imagesSizes.big.rationHeight +
-        imagesSizes.little.width.notebook / imagesSizes.little.rationHeight,
-      width: imagesSizes.big.width.notebook,
-    },
-    "screen and (max-width: 660px)": {
-      height:
-        imagesSizes.big.width.tablet / imagesSizes.big.rationHeight +
-        imagesSizes.little.width.tablet / imagesSizes.little.rationHeight,
-      width: imagesSizes.big.width.tablet,
-    },
-    "screen and (max-width: 400px)": {
-      height:
-        imagesSizes.big.width.phone / imagesSizes.big.rationHeight +
-        imagesSizes.little.width.phone / imagesSizes.little.rationHeight,
-      width: imagesSizes.big.width.phone,
-    },
-  },
+  position: "relative",
+  width: "100%",
+  height: "75vh",
+  minHeight: "75vh",
+  maxHeight: "75vh",
+  alignSelf: "stretch",
+  overflow: "hidden",
 });
 
 export const imagesWrapperClass = style({
   position: "absolute",
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "flex-end",
-  alignItems: "flex-end",
+  inset: 0,
+  display: "block",
   backgroundColor: "white",
 });
 
-export const bigImageClass = style({
-  height: imagesSizes.big.width.desktop / imagesSizes.big.rationHeight,
-  width: imagesSizes.big.width.desktop,
-  "@media": {
-    "screen and (max-width: 1000px)": {
-      height: imagesSizes.big.width.notebook / imagesSizes.big.rationHeight,
-      width: imagesSizes.big.width.notebook,
-    },
-    "screen and (max-width: 660px)": {
-      height: imagesSizes.big.width.tablet / imagesSizes.big.rationHeight,
-      width: imagesSizes.big.width.tablet,
-    },
-    "screen and (max-width: 400px)": {
-      height: imagesSizes.big.width.phone / imagesSizes.big.rationHeight,
-      width: imagesSizes.big.width.phone,
-    },
-  },
-});
-
-export const littleImageClass = style({
-  height: imagesSizes.little.width.desktop / imagesSizes.little.rationHeight,
-  width: imagesSizes.little.width.desktop,
-  marginTop: 10,
-  "@media": {
-    "screen and (max-width: 1000px)": {
-      height:
-        imagesSizes.little.width.notebook / imagesSizes.little.rationHeight,
-      width: imagesSizes.little.width.notebook,
-      marginTop: 8,
-    },
-    "screen and (max-width: 660px)": {
-      height: imagesSizes.little.width.tablet / imagesSizes.little.rationHeight,
-      width: imagesSizes.little.width.tablet,
-      marginTop: 6,
-    },
-    "screen and (max-width: 400px)": {
-      height: imagesSizes.little.width.phone / imagesSizes.little.rationHeight,
-      width: imagesSizes.little.width.phone,
-    },
-  },
+export const carouselImageClass = style({
+  objectFit: "cover",
+  objectPosition: "center",
 });
 
 export const comingSoonWrapperclass = style({
-  width: 223,
-
-  "@media": {
-    "screen and (max-width: 1000px)": {
-      width: 157,
-    },
-  },
-});
-
-export const comingSoonClass = style({
-  fontSize: 37,
-  fontWeight: 500,
-  color: "#919597",
-
-  "@media": {
-    "screen and (max-width: 1000px)": {
-      fontSize: 26,
-    },
-    "screen and (max-width: 660px)": {
-      fontSize: 24,
-    },
-    "screen and (max-width: 400px)": {
-      fontSize: 24,
-    },
-  },
+  width: "100%",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
 });
 
 export const bachecaAndInstagramTopWrapperClass = style({
