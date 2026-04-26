@@ -2,21 +2,30 @@
 import { useEffect, useState } from "react";
 import { cursorClass, pointerClass } from "./style.css";
 
+const pointerSelector = "a, button, [data-cursor-hover]";
+
+const elementFromEventTarget = (n: EventTarget | null): Element | null => {
+  if (!n) {
+    return null;
+  }
+  if (n instanceof Element) {
+    return n;
+  }
+  if (n instanceof Text) {
+    return n.parentElement;
+  }
+  return null;
+};
+
 export const Cursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
   const [isPointer, setIsPointer] = useState(false);
 
-  const handleMouseMove = (e: any) => {
+  const handleMouseMove = (e: MouseEvent) => {
     setPosition({ x: e.clientX, y: e.clientY });
-
-    const target = e.target;
-
-    if (e.toElement.nodeName === "A") {
-      setIsPointer(true);
-    } else {
-      setIsPointer(false);
-    }
+    const el = elementFromEventTarget(e.target);
+    setIsPointer(!!el?.closest(pointerSelector));
   };
 
   useEffect(() => {

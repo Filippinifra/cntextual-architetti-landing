@@ -52,7 +52,7 @@ export const imagesWrapperClass = style({
   minHeight: 0,
   backgroundColor: "white",
   isolation: "isolate",
-  cursor: "pointer",
+  cursor: "none",
 });
 
 export const carouselImageClass = style({

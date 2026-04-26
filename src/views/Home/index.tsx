@@ -73,6 +73,7 @@ export const HomeView = () => {
               key={src}
               style={{ zIndex: i === bgImageIndex ? 100 : 50 }}
               className={imagesWrapperClass}
+              data-cursor-hover=""
               onClick={() => setLightboxIndex(i)}
             >
               <Image
