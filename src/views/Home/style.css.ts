@@ -52,6 +52,7 @@ export const imagesWrapperClass = style({
   minWidth: 0,
   minHeight: 0,
   backgroundColor: "white",
+  isolation: "isolate",
 });
 
 export const carouselImageClass = style({
@@ -59,6 +60,59 @@ export const carouselImageClass = style({
   height: "100%",
   objectFit: "cover",
   objectPosition: "center",
+});
+
+export const carouselCaptionClass = style({
+  position: "absolute",
+  left: 12,
+  bottom: 12,
+  zIndex: 2,
+  maxWidth: "min(80%, 420px)",
+  padding: 0,
+  display: "flex",
+  flexDirection: "column",
+  gap: 2,
+  boxSizing: "border-box",
+  pointerEvents: "none",
+  "@media": {
+    "screen and (max-width: 660px)": {
+      left: 8,
+      bottom: 8,
+      maxWidth: "90%",
+    },
+  },
+});
+
+export const carouselCaptionTitleClass = style({
+  margin: 0,
+  color: "#ffffff",
+  fontSize: 15,
+  fontWeight: 700,
+  lineHeight: 1.25,
+  "@media": {
+    "screen and (max-width: 1000px)": {
+      fontSize: 13,
+    },
+    "screen and (max-width: 400px)": {
+      fontSize: 12,
+    },
+  },
+});
+
+export const carouselCaptionSubtitleClass = style({
+  margin: 0,
+  color: "rgba(255, 255, 255, 0.95)",
+  fontSize: 14,
+  fontWeight: 400,
+  lineHeight: 1.25,
+  "@media": {
+    "screen and (max-width: 1000px)": {
+      fontSize: 12,
+    },
+    "screen and (max-width: 400px)": {
+      fontSize: 11,
+    },
+  },
 });
 
 export const carouselLogoOverlayClass = style({

@@ -5,6 +5,9 @@ import {
   addOnTableClass,
   bachecaAndInstagramBottomWrapperClass,
   bachecaAndInstagramTopWrapperClass,
+  carouselCaptionClass,
+  carouselCaptionSubtitleClass,
+  carouselCaptionTitleClass,
   carouselImageClass,
   carouselLogoOverlayClass,
   carouselOverlayLogoImageClass,
@@ -60,6 +63,33 @@ const CAROUSEL_SLIDES = [...Array(19)].map(
   (_, i) => `/carousel/${String(i + 1).padStart(2, "0")}.jpg`
 );
 
+type CarouselCaption = {
+  title: string;
+  subtitle: string;
+};
+
+const CAROUSEL_CAPTIONS: (CarouselCaption | null)[] = [
+  { title: "Porta S.Biagio Apartment", subtitle: "Appartamento privato" },
+  { title: "Porta S.Biagio Apartment", subtitle: "Appartamento privato" },
+  { title: "Porta S.Biagio Apartment", subtitle: "Appartamento privato" },
+  { title: "Porta S.Biagio Apartment", subtitle: "Appartamento privato" },
+  { title: "Porta S.Biagio Apartment", subtitle: "Appartamento privato" },
+  { title: "RM144", subtitle: "Residenza" },
+  { title: "RM144", subtitle: "Residenza" },
+  { title: "RM144", subtitle: "Residenza" },
+  { title: "TT33", subtitle: "Residenza" },
+  { title: "Casa DV", subtitle: "Residenza" },
+  { title: "Casa DV", subtitle: "Residenza" },
+  { title: "Casa VDA", subtitle: "Residenza" },
+  { title: "Domus 8", subtitle: "Residenza" },
+  { title: "Scuola dell'infanzia Villasanta", subtitle: "Edificio Pubblico" },
+  { title: "Scuola dell'infanzia Villasanta", subtitle: "Edificio Pubblico" },
+  { title: "Scuola dell'infanzia Villasanta", subtitle: "Edificio Pubblico" },
+  { title: "Scuola dell'infanzia Pordenone", subtitle: "Edificio Pubblico" },
+  { title: "Scuola dell'infanzia Blassono", subtitle: "Edificio Pubblico" },
+  { title: "Rifugio Tonini", subtitle: "Edificio Pubblico" },
+];
+
 export const HomeView = () => {
   const [bgImageIndex, setBgImageIndex] = useState<number>(0);
 
@@ -68,7 +98,7 @@ export const HomeView = () => {
       setBgImageIndex((prev) =>
         prev === CAROUSEL_SLIDES.length - 1 ? 0 : prev + 1
       );
-    }, 2000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
@@ -76,22 +106,33 @@ export const HomeView = () => {
   return (
     <main className={mainClass}>
       <div className={externalImagesWrapperClass}>
-        {CAROUSEL_SLIDES.map((src, i) => (
-          <div
-            key={src}
-            style={{ zIndex: i === bgImageIndex ? 100 : 50 }}
-            className={imagesWrapperClass}
-          >
-            <Image
-              alt=""
-              src={src}
-              fill
-              priority={i === 0}
-              sizes="(max-width: 1000px) 100vw, 896px"
-              className={carouselImageClass}
-            />
-          </div>
-        ))}
+        {CAROUSEL_SLIDES.map((src, i) => {
+          const caption = CAROUSEL_CAPTIONS[i];
+          return (
+            <div
+              key={src}
+              style={{ zIndex: i === bgImageIndex ? 100 : 50 }}
+              className={imagesWrapperClass}
+            >
+              <Image
+                alt=""
+                src={src}
+                fill
+                priority={i === 0}
+                sizes="(max-width: 1000px) 100vw, 896px"
+                className={carouselImageClass}
+              />
+              {caption && (
+                <div className={carouselCaptionClass}>
+                  <p className={carouselCaptionTitleClass}>{caption.title}</p>
+                  <p className={carouselCaptionSubtitleClass}>
+                    {caption.subtitle}
+                  </p>
+                </div>
+              )}
+            </div>
+          );
+        })}
         <div className={carouselLogoOverlayClass} aria-hidden>
           <Image
             src={LOGO_SRC}
