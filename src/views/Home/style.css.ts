@@ -8,7 +8,7 @@ export const mainClass = style({
   position: "relative",
   display: "flex",
   flexDirection: "column",
-  gap: 32,
+  gap: 0,
   boxSizing: "border-box",
   width: "100%",
   height: "100dvh",
@@ -134,7 +134,8 @@ export const carouselOverlayLogoImageClass = style({
   flexShrink: 0,
   objectFit: "contain",
   objectPosition: "center",
-  filter: "drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4)) drop-shadow(0 6px 24px rgba(0, 0, 0, 0.28))",
+  filter:
+    "drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4)) drop-shadow(0 6px 24px rgba(0, 0, 0, 0.28))",
 });
 
 export const comingSoonWrapperclass = style({
@@ -293,6 +294,13 @@ export const footerContactBlockRowClass = style({
   width: "100%",
   minWidth: 0,
   boxSizing: "border-box",
+  "@media": {
+    "screen and (max-width: 660px)": {
+      flexDirection: "column",
+      alignItems: "flex-end",
+      gap: 8,
+    },
+  },
 });
 
 export const footerContactInstagramLinkClass = style({
