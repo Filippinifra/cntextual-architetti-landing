@@ -19,4 +19,5 @@ export const helveticaNowText = localFont({
     },
   ],
   display: "swap",
+  variable: "--font-helvetica-now-text",
 });
