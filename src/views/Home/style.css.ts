@@ -146,25 +146,39 @@ export const comingSoonWrapperclass = style({
   flexShrink: 0,
 });
 
-export const bachecaAndInstagramTopWrapperClass = style({
+export const portfolioDownloadTopWrapperClass = style({
   display: "flex",
-  justifyContent: "space-between",
-  paddingLeft: 1,
-  paddingRight: 2,
+  justifyContent: "center",
+  alignItems: "center",
+  width: "100%",
+  boxSizing: "border-box",
 });
 
-export const bachecaAndInstagramBottomWrapperClass = style({
+export const portfolioDownloadBottomWrapperClass = style({
   display: "flex",
   flexDirection: "column",
-  justifyContent: "flex-end",
+  justifyContent: "center",
+  alignItems: "center",
+  width: "100%",
+  boxSizing: "border-box",
   gap: 8,
 });
 
 export const footerWrapperClass = style({
   width: "100%",
   display: "flex",
+  flexDirection: "row",
   minHeight: 0,
   flexShrink: 0,
+  boxSizing: "border-box",
+  alignItems: "stretch",
+  gap: 8,
+
+  "@media": {
+    "screen and (max-width: 660px)": {
+      flexDirection: "column",
+    },
+  },
 });
 
 export const internalFooterWrapperClass = style({
@@ -203,10 +217,20 @@ export const internalFooterItemWapperClass = style({
   alignItems: "center",
 });
 
-export const linksClass = style({
+export const downloadPortfolioClass = style({
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  boxSizing: "border-box",
+  padding: 0,
   fontSize: 18,
+  fontWeight: 400,
   color: "#313237",
   cursor: "none",
+  textDecoration: "none",
+  border: "none",
+  backgroundColor: "transparent",
+  textAlign: "center",
 
   "@media": {
     "screen and (max-width: 1000px)": {

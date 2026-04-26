@@ -9,8 +9,7 @@ import {
 } from "./carouselData";
 import {
   addOnTableClass,
-  bachecaAndInstagramBottomWrapperClass,
-  bachecaAndInstagramTopWrapperClass,
+  downloadPortfolioClass,
   carouselCaptionClass,
   carouselCaptionSubtitleClass,
   carouselCaptionTitleClass,
@@ -29,12 +28,15 @@ import {
   imagesWrapperClass,
   internalFooterItemWapperClass,
   internalFooterWrapperClass,
-  linksClass,
   mainClass,
   phoneNumberWrapperClass,
+  portfolioDownloadBottomWrapperClass,
+  portfolioDownloadTopWrapperClass,
   removeOnTableClass,
   wrapper,
 } from "./style.css";
+
+const PORTFOLIO_PDF_HREF = "/BACHECA.pdf";
 
 const email = "info@cntextual.it";
 const phones = [
@@ -43,30 +45,16 @@ const phones = [
 ];
 const instagram = "cntextual";
 
-const BachecaAndInstagram = () => {
-  return (
-    <>
-      <a
-        id="bacheca"
-        className={linksClass}
-        href="/BACHECA.pdf"
-        target="_blank"
-        style={{ textDecoration: "none" }}
-      >
-        bacheca
-      </a>
-      <a
-        id="instagram"
-        className={linksClass}
-        target="_blank"
-        href={`https://www.instagram.com/${instagram}/`}
-        style={{ textDecoration: "none" }}
-      >
-        instagram
-      </a>
-    </>
-  );
-};
+const DownloadPortfolio = () => (
+  <a
+    className={downloadPortfolioClass}
+    id="download-portfolio"
+    href={PORTFOLIO_PDF_HREF}
+    download="BACHECA.pdf"
+  >
+    Download Portfolio
+  </a>
+);
 
 const LOGO_SRC = "/cntextual-logo-bianco.png";
 
@@ -139,16 +127,16 @@ export const HomeView = () => {
       <div className={wrapper}>
         <div className={comingSoonWrapperclass}>
           <div
-            className={`${removeOnTableClass} ${bachecaAndInstagramTopWrapperClass}`}
+            className={`${removeOnTableClass} ${portfolioDownloadTopWrapperClass}`}
           >
-            <BachecaAndInstagram />
+            <DownloadPortfolio />
           </div>
         </div>
         <div className={footerWrapperClass}>
           <div
-            className={`${addOnTableClass} ${bachecaAndInstagramBottomWrapperClass}`}
+            className={`${addOnTableClass} ${portfolioDownloadBottomWrapperClass}`}
           >
-            <BachecaAndInstagram />
+            <DownloadPortfolio />
           </div>
           <div className={internalFooterWrapperClass}>
             <div className={phoneNumberWrapperClass}>
