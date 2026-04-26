@@ -2,54 +2,46 @@ import { style } from "@vanilla-extract/css";
 
 const maxContentWidth = 896 + 80;
 
+export const mainClass = style({
+  maxWidth: maxContentWidth,
+  margin: "auto",
+  position: "relative",
+  display: "flex",
+  flexDirection: "column",
+  gap: 32,
+  boxSizing: "border-box",
+  width: "100%",
+  height: "100dvh",
+  maxHeight: "100dvh",
+  minHeight: 0,
+  paddingTop: 32,
+  paddingBottom: 32,
+  paddingLeft: 20,
+  paddingRight: 20,
+  overflow: "hidden",
+});
+
 export const wrapper = style({
   position: "relative",
-  height: "100%",
-  display: "grid",
-  gridAutoFlow: "column",
-  margin: "auto",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
   boxSizing: "border-box",
-
-  paddingTop: 96,
-  paddingBottom: 96,
-  paddingLeft: 40,
-  paddingRight: 40,
-  gridTemplateRows: "1fr 75vh 100px 74px 1fr 34px",
-  maxWidth: maxContentWidth,
-  "@media": {
-    "screen and (max-width: 1000px)": {
-      paddingTop: 96,
-      paddingBottom: 96,
-      paddingLeft: 30,
-      paddingRight: 30,
-      maxWidth: 624 + 60,
-    },
-    "screen and (max-width: 660px)": {
-      paddingTop: 96,
-      paddingBottom: 96,
-      paddingLeft: 30,
-      paddingRight: 30,
-      gridTemplateRows: "1fr 75vh 100px 74px 1fr 101px",
-      maxWidth: 350 + 60,
-    },
-    "screen and (max-width: 400px)": {
-      paddingTop: 96,
-      paddingBottom: 96,
-      paddingLeft: 30,
-      paddingRight: 30,
-      gridTemplateRows: "1fr 75vh 100px 74px 1fr 109px",
-      maxWidth: 320 + 60,
-    },
-  },
+  width: "100%",
+  minWidth: 0,
+  minHeight: 0,
+  flex: "0 0 25dvh",
+  overflow: "auto",
+  alignSelf: "stretch",
 });
 
 export const externalImagesWrapperClass = style({
   position: "relative",
+  boxSizing: "border-box",
   width: "100%",
-  height: "75vh",
-  minHeight: "75vh",
-  maxHeight: "75vh",
-  alignSelf: "stretch",
+  minWidth: 0,
+  minHeight: 0,
+  flex: "1 1 0%",
   overflow: "hidden",
 });
 
@@ -57,10 +49,14 @@ export const imagesWrapperClass = style({
   position: "absolute",
   inset: 0,
   display: "block",
+  minWidth: 0,
+  minHeight: 0,
   backgroundColor: "white",
 });
 
 export const carouselImageClass = style({
+  width: "100%",
+  height: "100%",
   objectFit: "cover",
   objectPosition: "center",
 });
@@ -70,6 +66,7 @@ export const comingSoonWrapperclass = style({
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
+  flexShrink: 0,
 });
 
 export const bachecaAndInstagramTopWrapperClass = style({
@@ -89,6 +86,8 @@ export const bachecaAndInstagramBottomWrapperClass = style({
 export const footerWrapperClass = style({
   width: "100%",
   display: "flex",
+  minHeight: 0,
+  flexShrink: 0,
 });
 
 export const internalFooterWrapperClass = style({

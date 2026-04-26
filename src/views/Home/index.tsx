@@ -14,6 +14,7 @@ import {
   internalFooterItemWapperClass,
   internalFooterWrapperClass,
   linksClass,
+  mainClass,
   phoneNumberWrapperClass,
   removeOnTableClass,
   wrapper,
@@ -63,36 +64,32 @@ export const HomeView = () => {
       setBgImageIndex((prev) =>
         prev === CAROUSEL_SLIDES.length - 1 ? 0 : prev + 1
       );
-    }, 300);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <main style={{ width: "100%", height: "100%" }}>
+    <main className={mainClass}>
+      <div className={externalImagesWrapperClass}>
+        {CAROUSEL_SLIDES.map((src, i) => (
+          <div
+            key={src}
+            style={{ zIndex: i === bgImageIndex ? 100 : 50 }}
+            className={imagesWrapperClass}
+          >
+            <Image
+              alt=""
+              src={src}
+              fill
+              priority={i === 0}
+              sizes="(max-width: 1000px) 100vw, 896px"
+              className={carouselImageClass}
+            />
+          </div>
+        ))}
+      </div>
       <div className={wrapper}>
-        {/* first spacer */}
-        <div />
-        <div className={externalImagesWrapperClass}>
-          {CAROUSEL_SLIDES.map((src, i) => (
-            <div
-              key={src}
-              style={{ zIndex: i === bgImageIndex ? 100 : 50 }}
-              className={imagesWrapperClass}
-            >
-              <Image
-                alt=""
-                src={src}
-                fill
-                priority={i === 0}
-                sizes="(max-width: 400px) 100vw, (max-width: 660px) 410px, (max-width: 1000px) 654px, 976px"
-                className={carouselImageClass}
-              />
-            </div>
-          ))}
-        </div>
-        {/* second spacer */}
-        <div />
         <div className={comingSoonWrapperclass}>
           <div
             className={`${removeOnTableClass} ${bachecaAndInstagramTopWrapperClass}`}
@@ -100,8 +97,6 @@ export const HomeView = () => {
             <BachecaAndInstagram />
           </div>
         </div>
-        {/* third spacer */}
-        <div />
         <div className={footerWrapperClass}>
           <div
             className={`${addOnTableClass} ${bachecaAndInstagramBottomWrapperClass}`}
