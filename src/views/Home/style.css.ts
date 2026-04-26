@@ -25,7 +25,6 @@ export const wrapper = style({
   position: "relative",
   display: "flex",
   flexDirection: "column",
-  justifyContent: "space-between",
   boxSizing: "border-box",
   width: "100%",
   minWidth: 0,
@@ -140,10 +139,13 @@ export const carouselOverlayLogoImageClass = style({
 
 export const comingSoonWrapperclass = style({
   width: "100%",
+  minHeight: 0,
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
-  flexShrink: 0,
+  alignItems: "center",
+  flex: 1,
+  boxSizing: "border-box",
 });
 
 export const portfolioDownloadTopWrapperClass = style({
@@ -151,17 +153,8 @@ export const portfolioDownloadTopWrapperClass = style({
   justifyContent: "center",
   alignItems: "center",
   width: "100%",
+  minHeight: 0,
   boxSizing: "border-box",
-});
-
-export const portfolioDownloadBottomWrapperClass = style({
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
-  width: "100%",
-  boxSizing: "border-box",
-  gap: 8,
 });
 
 export const footerWrapperClass = style({
@@ -169,7 +162,7 @@ export const footerWrapperClass = style({
   display: "flex",
   flexDirection: "row",
   minHeight: 0,
-  flexShrink: 0,
+  flex: "0 0 auto",
   boxSizing: "border-box",
   alignItems: "stretch",
   gap: 8,
@@ -222,10 +215,7 @@ export const downloadPortfolioClass = style({
   alignItems: "center",
   justifyContent: "center",
   boxSizing: "border-box",
-  paddingTop: 64,
-  paddingBottom: 64,
-  paddingLeft: 0,
-  paddingRight: 0,
+  padding: 0,
   fontSize: 18,
   fontWeight: 400,
   color: "#313237",
@@ -237,13 +227,9 @@ export const downloadPortfolioClass = style({
 
   "@media": {
     "screen and (max-width: 660px)": {
-      paddingTop: 20,
-      paddingBottom: 20,
       fontSize: 15,
     },
     "screen and (max-width: 400px)": {
-      paddingTop: 12,
-      paddingBottom: 12,
       fontSize: 14,
     },
   },
@@ -332,14 +318,6 @@ export const footerContactTextColumnClass = style({
 export const removeOnTableClass = style({
   "@media": {
     "screen and (max-width: 660px)": {
-      display: "none",
-    },
-  },
-});
-
-export const addOnTableClass = style({
-  "@media": {
-    "screen and (min-width: 661px)": {
       display: "none",
     },
   },

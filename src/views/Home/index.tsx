@@ -8,7 +8,6 @@ import {
   CAROUSEL_SLIDES,
 } from "./carouselData";
 import {
-  addOnTableClass,
   downloadPortfolioClass,
   carouselCaptionClass,
   carouselCaptionSubtitleClass,
@@ -30,7 +29,6 @@ import {
   internalFooterWrapperClass,
   mainClass,
   phoneNumberWrapperClass,
-  portfolioDownloadBottomWrapperClass,
   portfolioDownloadTopWrapperClass,
   removeOnTableClass,
   wrapper,
@@ -126,18 +124,11 @@ export const HomeView = () => {
       </div>
       <div className={wrapper}>
         <div className={comingSoonWrapperclass}>
-          <div
-            className={`${removeOnTableClass} ${portfolioDownloadTopWrapperClass}`}
-          >
+          <div className={portfolioDownloadTopWrapperClass}>
             <DownloadPortfolio />
           </div>
         </div>
         <div className={footerWrapperClass}>
-          <div
-            className={`${addOnTableClass} ${portfolioDownloadBottomWrapperClass}`}
-          >
-            <DownloadPortfolio />
-          </div>
           <div className={internalFooterWrapperClass}>
             <div className={phoneNumberWrapperClass}>
               <div
