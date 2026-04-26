@@ -123,14 +123,15 @@ export const carouselLogoOverlayClass = style({
   alignItems: "center",
   justifyContent: "center",
   pointerEvents: "none",
-  padding: 16,
+  padding: 8,
   boxSizing: "border-box",
 });
 
 export const carouselOverlayLogoImageClass = style({
   display: "block",
-  width: "50%",
+  width: "72%",
   height: "auto",
+  maxWidth: 480,
   flexShrink: 0,
   objectFit: "contain",
   objectPosition: "center",
