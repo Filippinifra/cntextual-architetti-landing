@@ -1,6 +1,11 @@
 "use client";
+import { CarouselModal } from "@/components/CarouselModal/CarouselModal";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import {
+  CAROUSEL_CAPTIONS,
+  CAROUSEL_SLIDES,
+} from "./carouselData";
 import {
   addOnTableClass,
   bachecaAndInstagramBottomWrapperClass,
@@ -59,41 +64,14 @@ const BachecaAndInstagram = () => {
 
 const LOGO_SRC = "/cntextual-logo-bianco.png";
 
-const CAROUSEL_SLIDES = [...Array(19)].map(
-  (_, i) => `/carousel/${String(i + 1).padStart(2, "0")}.jpg`
-);
-
-type CarouselCaption = {
-  title: string;
-  subtitle: string;
-};
-
-const CAROUSEL_CAPTIONS: (CarouselCaption | null)[] = [
-  { title: "Porta S.Biagio Apartment", subtitle: "Appartamento privato" },
-  { title: "Porta S.Biagio Apartment", subtitle: "Appartamento privato" },
-  { title: "Porta S.Biagio Apartment", subtitle: "Appartamento privato" },
-  { title: "Porta S.Biagio Apartment", subtitle: "Appartamento privato" },
-  { title: "Porta S.Biagio Apartment", subtitle: "Appartamento privato" },
-  { title: "RM144", subtitle: "Residenza" },
-  { title: "RM144", subtitle: "Residenza" },
-  { title: "RM144", subtitle: "Residenza" },
-  { title: "TT33", subtitle: "Residenza" },
-  { title: "Casa DV", subtitle: "Residenza" },
-  { title: "Casa DV", subtitle: "Residenza" },
-  { title: "Casa VDA", subtitle: "Residenza" },
-  { title: "Domus 8", subtitle: "Residenza" },
-  { title: "Scuola dell'infanzia Villasanta", subtitle: "Edificio Pubblico" },
-  { title: "Scuola dell'infanzia Villasanta", subtitle: "Edificio Pubblico" },
-  { title: "Scuola dell'infanzia Villasanta", subtitle: "Edificio Pubblico" },
-  { title: "Scuola dell'infanzia Pordenone", subtitle: "Edificio Pubblico" },
-  { title: "Scuola dell'infanzia Blassono", subtitle: "Edificio Pubblico" },
-  { title: "Rifugio Tonini", subtitle: "Edificio Pubblico" },
-];
-
 export const HomeView = () => {
   const [bgImageIndex, setBgImageIndex] = useState<number>(0);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   useEffect(() => {
+    if (lightboxIndex !== null) {
+      return;
+    }
     const interval = setInterval(() => {
       setBgImageIndex((prev) =>
         prev === CAROUSEL_SLIDES.length - 1 ? 0 : prev + 1
@@ -101,7 +79,7 @@ export const HomeView = () => {
     }, 4000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [lightboxIndex]);
 
   return (
     <main className={mainClass}>
@@ -113,6 +91,7 @@ export const HomeView = () => {
               key={src}
               style={{ zIndex: i === bgImageIndex ? 100 : 50 }}
               className={imagesWrapperClass}
+              onClick={() => setLightboxIndex(i)}
             >
               <Image
                 alt=""
@@ -144,6 +123,12 @@ export const HomeView = () => {
             priority
           />
         </div>
+        <CarouselModal
+          isOpen={lightboxIndex !== null}
+          index={lightboxIndex ?? 0}
+          onClose={() => setLightboxIndex(null)}
+          onIndexChange={setLightboxIndex}
+        />
       </div>
       <div className={wrapper}>
         <div className={comingSoonWrapperclass}>
