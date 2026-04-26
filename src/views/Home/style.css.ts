@@ -269,12 +269,12 @@ export const footerContactBlockClass = style({
   display: "flex",
   flexDirection: "column",
   alignItems: "stretch",
-  justifyContent: "center",
+  justifyContent: "flex-end",
   width: "100%",
   minWidth: 0,
   boxSizing: "border-box",
   borderBottom: "1px solid #838488",
-  paddingBottom: 2,
+  paddingBottom: 0,
   marginBottom: 0,
 
   "@media": {
