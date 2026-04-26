@@ -205,7 +205,7 @@ export const internalFooterItemWapperClass = style({
 
 export const linksClass = style({
   fontSize: 18,
-  color: "#a3a7a8",
+  color: "#313237",
   cursor: "none",
 
   "@media": {
@@ -224,7 +224,7 @@ export const linksClass = style({
 export const footerTextClass = style({
   fontSize: 13,
   fontStyle: "italic",
-  color: "#b5b8ba",
+  color: "#313237",
   whiteSpace: "break-spaces",
   textAlign: "right",
   cursor: "none",
@@ -241,6 +241,57 @@ export const footerTextClass = style({
       fontSize: 12,
     },
   },
+});
+
+export const footerContactUsLabelClass = style([
+  footerTextClass,
+  {
+    color: "#838488",
+  },
+]);
+
+export const footerContactBlockClass = style({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "stretch",
+  justifyContent: "center",
+  width: "100%",
+  minWidth: 0,
+  boxSizing: "border-box",
+  borderBottom: "1px solid #838488",
+  paddingBottom: 2,
+  marginBottom: 0,
+});
+
+export const footerContactBlockRowClass = style({
+  display: "flex",
+  flexDirection: "row",
+  alignItems: "center",
+  gap: 20,
+  width: "100%",
+  minWidth: 0,
+  boxSizing: "border-box",
+});
+
+export const footerContactInstagramLinkClass = style({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  flexShrink: 0,
+  color: "#000000",
+  lineHeight: 0,
+  cursor: "none",
+  textDecoration: "none",
+});
+
+export const footerContactTextColumnClass = style({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "flex-end",
+  flex: 1,
+  minWidth: 0,
+  width: "100%",
+  boxSizing: "border-box",
 });
 
 export const removeOnTableClass = style({

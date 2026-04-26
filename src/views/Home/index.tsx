@@ -1,5 +1,6 @@
 "use client";
 import { CarouselModal } from "@/components/CarouselModal/CarouselModal";
+import { InstagramIcon } from "@/components/InstagramIcon/InstagramIcon";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import {
@@ -18,6 +19,11 @@ import {
   carouselOverlayLogoImageClass,
   comingSoonWrapperclass,
   externalImagesWrapperClass,
+  footerContactBlockClass,
+  footerContactBlockRowClass,
+  footerContactInstagramLinkClass,
+  footerContactTextColumnClass,
+  footerContactUsLabelClass,
   footerTextClass,
   footerWrapperClass,
   imagesWrapperClass,
@@ -189,21 +195,34 @@ export const HomeView = () => {
                 </a>
               </div>
             </div>
-            <div className={internalFooterItemWapperClass}>
-              <a
-                className={`${footerTextClass} ${removeOnTableClass}`}
-                href={`mailto:${email}`}
-                id="email-label"
-              >
-                {"contact us"}
-              </a>
-              <a
-                className={footerTextClass}
-                href={`mailto:${email}`}
-                id="email-contact"
-              >
-                {email}
-              </a>
+            <div className={footerContactBlockClass}>
+              <div className={footerContactBlockRowClass}>
+                <a
+                  className={footerContactInstagramLinkClass}
+                  href={`https://www.instagram.com/${instagram}/`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                >
+                  <InstagramIcon size={22} />
+                </a>
+                <div className={footerContactTextColumnClass}>
+                  <a
+                    className={`${footerContactUsLabelClass} ${removeOnTableClass}`}
+                    href={`mailto:${email}`}
+                    id="email-label"
+                  >
+                    {"contact us"}
+                  </a>
+                  <a
+                    className={footerTextClass}
+                    href={`mailto:${email}`}
+                    id="email-contact"
+                  >
+                    {email}
+                  </a>
+                </div>
+              </div>
             </div>
             <p className={footerTextClass}>
               {"Sovico,\nMonza e Brianza, Italy"}
