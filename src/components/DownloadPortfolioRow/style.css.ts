@@ -48,15 +48,18 @@ const flowInner = keyframes({
 });
 
 const chevronBase = style({
-  display: "inline-block",
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
   lineHeight: 1,
   color: "inherit",
-  fontSize: "1.55em",
-  fontWeight: 300,
+  fontSize: "2.95em",
+  fontWeight: 100,
   userSelect: "none",
+  flexShrink: 0,
   "@media": {
     "screen and (max-width: 660px)": {
-      fontSize: "1.4em",
+      fontSize: "2.55em",
     },
     "(prefers-reduced-motion: reduce)": {
       animation: "none",
@@ -94,6 +97,7 @@ export const linkLayoutClass = style({
   justifyContent: "center",
   gap: 10,
   boxSizing: "border-box",
+  lineHeight: 1.2,
   "@media": {
     "screen and (max-width: 660px)": {
       gap: 7,
@@ -101,15 +105,19 @@ export const linkLayoutClass = style({
   },
 });
 
+export const linkLabelClass = style({
+  alignSelf: "center",
+  lineHeight: 1.2,
+  font: "inherit",
+});
+
 export const groupClass = style({
   display: "inline-flex",
   flexDirection: "row",
   alignItems: "center",
-  gap: 3,
+  alignSelf: "center",
+  gap: 0,
   pointerEvents: "none",
-  "@media": {
-    "screen and (max-width: 660px)": {
-      gap: 2,
-    },
-  },
+  flexShrink: 0,
+  lineHeight: 0,
 });

@@ -217,6 +217,7 @@ export const downloadPortfolioClass = style({
   boxSizing: "border-box",
   padding: 0,
   fontSize: 18,
+  lineHeight: 1.2,
   fontWeight: 400,
   color: "#313237",
   cursor: "none",

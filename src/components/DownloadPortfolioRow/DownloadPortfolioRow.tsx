@@ -1,10 +1,12 @@
 "use client";
 
+import { downloadChevronsFont } from "@/fonts/downloadChevronsFont";
 import {
   chevronInnerClass,
   chevronMidClass,
   chevronOuterClass,
   groupClass,
+  linkLabelClass,
   linkLayoutClass,
 } from "./style.css";
 
@@ -29,13 +31,19 @@ export const DownloadPortfolioRow = ({
     download={downloadName}
     id={id}
   >
-    <span className={groupClass} aria-hidden>
+    <span
+      className={`${groupClass} ${downloadChevronsFont.className}`}
+      aria-hidden
+    >
       <span className={chevronOuterClass}>›</span>
       <span className={chevronMidClass}>›</span>
       <span className={chevronInnerClass}>›</span>
     </span>
-    {label}
-    <span className={groupClass} aria-hidden>
+    <span className={linkLabelClass}>{label}</span>
+    <span
+      className={`${groupClass} ${downloadChevronsFont.className}`}
+      aria-hidden
+    >
       <span className={chevronInnerClass}>‹</span>
       <span className={chevronMidClass}>‹</span>
       <span className={chevronOuterClass}>‹</span>
