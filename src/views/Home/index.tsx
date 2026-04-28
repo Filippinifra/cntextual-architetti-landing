@@ -16,7 +16,7 @@ import {
   carouselImageClass,
   carouselLogoOverlayClass,
   carouselOverlayLogoImageClass,
-  comingSoonWrapperclass,
+  portfolioDownloadSectionClass,
   externalImagesWrapperClass,
   footerContactBlockClass,
   footerContactBlockRowClass,
@@ -114,7 +114,7 @@ export const HomeView = () => {
         />
       </div>
       <div className={wrapper}>
-        <div className={comingSoonWrapperclass}>
+        <div className={portfolioDownloadSectionClass}>
           <div className={portfolioDownloadTopWrapperClass}>
             <DownloadPortfolioRow
               href={PORTFOLIO_PDF_HREF}

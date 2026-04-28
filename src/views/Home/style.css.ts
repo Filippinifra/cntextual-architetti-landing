@@ -28,8 +28,8 @@ export const wrapper = style({
   boxSizing: "border-box",
   width: "100%",
   minWidth: 0,
-  minHeight: 0,
-  flex: "0 0 25dvh",
+  minHeight: "25dvh",
+  flex: "0 0 auto",
   overflow: "auto",
   alignSelf: "stretch",
 });
@@ -139,14 +139,15 @@ export const carouselOverlayLogoImageClass = style({
     "drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4)) drop-shadow(0 6px 24px rgba(0, 0, 0, 0.28))",
 });
 
-export const comingSoonWrapperclass = style({
+export const portfolioDownloadSectionClass = style({
   width: "100%",
-  minHeight: 0,
+  minHeight: 100,
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
   flex: 1,
+  flexShrink: 0,
   boxSizing: "border-box",
 });
 
@@ -155,7 +156,8 @@ export const portfolioDownloadTopWrapperClass = style({
   justifyContent: "center",
   alignItems: "center",
   width: "100%",
-  minHeight: 0,
+  minHeight: 100,
+  flexShrink: 0,
   boxSizing: "border-box",
 });
 
@@ -165,6 +167,7 @@ export const footerWrapperClass = style({
   flexDirection: "row",
   minHeight: 0,
   flex: "0 0 auto",
+  flexShrink: 0,
   boxSizing: "border-box",
   alignItems: "stretch",
   gap: 8,
