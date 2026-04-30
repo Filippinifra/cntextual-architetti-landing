@@ -16,17 +16,12 @@ export const layoutClass = style({
   alignItems: "stretch",
   justifyContent: "center",
   gap: 8,
-  padding: "20px 56px 100px 56px",
+  padding: "70px 56px 70px 56px",
   boxSizing: "border-box",
   pointerEvents: "none",
   width: "100%",
   height: "100dvh",
   minHeight: 0,
-  "@media": {
-    "screen and (max-width: 660px)": {
-      padding: "12px 12px 88px 12px",
-    },
-  },
 });
 
 export const imageAreaClass = style({
