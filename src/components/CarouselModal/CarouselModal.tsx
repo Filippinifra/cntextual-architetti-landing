@@ -1,5 +1,6 @@
 "use client";
 
+import { ChevronIcon } from "@/components/ChevronIcon/ChevronIcon";
 import {
   CAROUSEL_CAPTIONS,
   MODAL_SLIDES,
@@ -99,7 +100,7 @@ export const CarouselModal = ({
           }}
           aria-label="Immagine precedente"
         >
-          ‹
+          <ChevronIcon mirrored />
         </button>
         <div
           className={imageAreaClass}
@@ -125,7 +126,7 @@ export const CarouselModal = ({
           }}
           aria-label="Immagine successiva"
         >
-          ›
+          <ChevronIcon />
         </button>
       </div>
       {caption && (

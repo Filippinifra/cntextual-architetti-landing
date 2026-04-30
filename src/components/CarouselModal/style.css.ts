@@ -59,8 +59,6 @@ export const navButtonClass = style({
   borderRadius: 4,
   backgroundColor: "rgba(255, 255, 255, 0.1)",
   color: "#ffffff",
-  fontSize: 28,
-  lineHeight: 1,
   cursor: "none",
   pointerEvents: "auto",
   padding: 0,
@@ -69,7 +67,6 @@ export const navButtonClass = style({
     "screen and (max-width: 660px)": {
       width: 40,
       height: 40,
-      fontSize: 22,
     },
   },
   ":hover": {
