@@ -115,7 +115,6 @@ export const HomeView = () => {
           <div className={portfolioDownloadTopWrapperClass}>
             <DownloadPortfolioRow
               href={PORTFOLIO_PDF_HREF}
-              download="BACHECA.pdf"
               linkClassName={downloadPortfolioClass}
               id="download-portfolio"
               label="Download Portfolio"

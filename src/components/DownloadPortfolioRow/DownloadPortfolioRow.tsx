@@ -6,7 +6,6 @@ import { linkLabelClass, linkLayoutClass } from "./style.css";
 
 type Props = {
   href: string;
-  download: string;
   linkClassName: string;
   id?: string;
   label: string;
@@ -14,7 +13,6 @@ type Props = {
 
 export const DownloadPortfolioRow = ({
   href,
-  download: downloadName,
   linkClassName,
   id,
   label,
@@ -22,7 +20,8 @@ export const DownloadPortfolioRow = ({
   <a
     className={`${linkLayoutClass} ${linkClassName}`}
     href={href}
-    download={downloadName}
+    target="_blank"
+    rel="noopener noreferrer"
     id={id}
   >
     <DownloadChevronsGroup />
