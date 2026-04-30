@@ -16,7 +16,7 @@ export const layoutClass = style({
   alignItems: "stretch",
   justifyContent: "center",
   gap: 8,
-  padding: "70px 56px 70px 56px",
+  padding: "70px 10px 70px 10px",
   boxSizing: "border-box",
   pointerEvents: "none",
   width: "100%",
