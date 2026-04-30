@@ -4,19 +4,15 @@ import { DownloadPortfolioRow } from "@/components/DownloadPortfolioRow/Download
 import { InstagramIcon } from "@/components/InstagramIcon/InstagramIcon";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { CAROUSEL_CAPTIONS, CAROUSEL_SLIDES } from "./carouselData";
 import {
-  CAROUSEL_CAPTIONS,
-  CAROUSEL_SLIDES,
-} from "./carouselData";
-import {
-  downloadPortfolioClass,
   carouselCaptionClass,
   carouselCaptionSubtitleClass,
   carouselCaptionTitleClass,
   carouselImageClass,
   carouselLogoOverlayClass,
   carouselOverlayLogoImageClass,
-  portfolioDownloadSectionClass,
+  downloadPortfolioClass,
   externalImagesWrapperClass,
   footerContactBlockClass,
   footerContactBlockRowClass,
@@ -30,6 +26,7 @@ import {
   internalFooterWrapperClass,
   mainClass,
   phoneNumberWrapperClass,
+  portfolioDownloadSectionClass,
   portfolioDownloadTopWrapperClass,
   removeOnTableClass,
   wrapper,
@@ -58,7 +55,7 @@ export const HomeView = () => {
       setBgImageIndex((prev) =>
         prev === CAROUSEL_SLIDES.length - 1 ? 0 : prev + 1
       );
-    }, 4000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [lightboxIndex]);
