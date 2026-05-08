@@ -30,7 +30,7 @@ export const CAROUSEL_CAPTIONS: (CarouselCaption | null)[] = [
   { title: "Scuola dell'infanzia Villasanta", subtitle: "Edificio Pubblico" },
   { title: "Scuola dell'infanzia Villasanta", subtitle: "Edificio Pubblico" },
   { title: "Scuola dell'infanzia Villasanta", subtitle: "Edificio Pubblico" },
-  { title: "Scuola dell'infanzia Pordenone", subtitle: "Edificio Pubblico" },
-  { title: "Scuola dell'infanzia Blassono", subtitle: "Edificio Pubblico" },
+  { title: "Scuola Primaria Pordenone", subtitle: "Edificio Pubblico" },
+  { title: "Scuola Primaria Blassono", subtitle: "Edificio Pubblico" },
   { title: "Rifugio Tonini", subtitle: "Edificio Pubblico" },
 ];
